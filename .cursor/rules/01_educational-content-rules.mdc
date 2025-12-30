@@ -30,6 +30,28 @@
 
 ---
 
+## 🚫 Zero-Copy Policy (Non-Negotiable)
+
+**CRITICAL**: All content (documentation, code comments, markdown files) must be transformative, not reformative.
+
+❌ **NEVER** copy text verbatim from books, articles, websites, videos, or third-party materials  
+❌ **NEVER** mirror a source's outline, section order, headings, or example sequence  
+❌ **NEVER** use "light paraphrasing" — must transform completely  
+❌ **NEVER** copy quotes verbatim — even "Key Principle" quotes must use original phrasing  
+✅ **ALWAYS** create original content with fresh explanations and examples  
+✅ **ALWAYS** write code examples from first principles  
+✅ Brief quotations allowed ONLY with quotation marks and source citation
+
+**Verification**: Run `.\tools\psscripts\Verify-ZeroCopy.ps1` before committing to check for:
+
+- Exact quote matches from source material
+- Near-exact matches (potential quote matches)
+- Phrase matches (in strict mode: `-Strict`)
+
+**Remember**: All content must be transformative, not reformative. Even quotes and "Key Principle" sections must use original phrasing.
+
+---
+
 ## 🚫 Modernization Principles (Non-Negotiable)
 
 **CRITICAL**: All modernization must follow these principles:

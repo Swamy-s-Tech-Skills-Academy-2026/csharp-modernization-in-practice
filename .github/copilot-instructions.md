@@ -46,7 +46,27 @@
 
 **Purpose**: Enables side-by-side comparison and demonstrates modernization benefits.
 
-### 2. Modernization Principles
+### 2. Zero-Copy Policy (MANDATORY)
+
+**CRITICAL**: All content (documentation, code comments, markdown files) must be transformative, not reformative.
+
+❌ **NEVER** copy text verbatim from books, articles, websites, videos, or third-party materials  
+❌ **NEVER** mirror a source's outline, section order, headings, or example sequence  
+❌ **NEVER** use "light paraphrasing" — must transform completely  
+❌ **NEVER** copy quotes verbatim — even "Key Principle" quotes must use original phrasing  
+✅ **ALWAYS** create original content with fresh explanations and examples  
+✅ **ALWAYS** write code examples from first principles  
+✅ Brief quotations allowed ONLY with quotation marks and source citation
+
+**Verification**: Run `.\tools\psscripts\Verify-ZeroCopy.ps1` before committing to check for:
+
+- Exact quote matches from source material
+- Near-exact matches (potential quote matches)
+- Phrase matches (in strict mode: `-Strict`)
+
+**Remember**: All content must be transformative, not reformative. Even quotes and "Key Principle" sections must use original phrasing.
+
+### 3. Modernization Principles
 
 ✅ **ALWAYS**: Make incremental, comparable changes  
 ✅ **ALWAYS**: Document architecture decisions in `docs/architecture-decisions/`  
@@ -55,7 +75,7 @@
 ❌ **NEVER**: Make architectural rewrites (focus on language-level modernization)  
 ❌ **NEVER**: Remove legacy code (keep for comparison)
 
-### 3. Update Verification Protocol (CRITICAL)
+### 4. Update Verification Protocol (CRITICAL)
 
 **After ANY structural change, IMMEDIATELY update**:
 
@@ -67,7 +87,7 @@
 
 **Self-Check Question**: "Did I update `docs/01_repository-structure.md` first?" - If no, STOP and do it NOW.
 
-### 4. C# Feature Selection
+### 5. C# Feature Selection
 
 **Focus on practical, high-impact language features**:
 
@@ -77,13 +97,14 @@
 
 **Not a feature catalog**: Demonstrate modernization value, not exhaustive coverage.
 
-### 5. Chain-of-Thought + ReAct + Reasoning
+### 6. Chain-of-Thought + ReAct + Reasoning
 
 **Apply systematic reasoning to every task using this framework**:
 
 #### Chain-of-Thought (CoT)
 
 Break down complex problems into logical steps:
+
 - **Decompose**: Split large tasks into smaller, manageable components
 - **Sequential Logic**: Show clear progression from problem → solution
 - **Explicit Reasoning**: Articulate WHY each modernization step is necessary
@@ -226,6 +247,7 @@ dotnet test
 
 - [ ] Code builds without errors
 - [ ] All tests pass for both legacy and modern implementations
+- [ ] **Zero-Copy Policy verified**: Run `.\tools\psscripts\Verify-ZeroCopy.ps1` (if source material exists)
 - [ ] ADRs updated (if significant changes)
 - [ ] README updated (if structure changed)
 - [ ] Documentation is clear and accurate
