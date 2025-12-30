@@ -1,9 +1,17 @@
-﻿namespace Legacy.AppHost;
+﻿using Legacy.Domain.Models;
+using Legacy.Domain.Rules;
+using Legacy.Domain.Workflows;
 
-class Program
+var command = new OperationCommand(
+    "RunReport",
+    DateTime.UtcNow,
+    "system");
+
+if (!CommandSafetyEvaluator.IsSafe(command))
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello, World!");
-    }
+    Console.WriteLine("Command is not allowed.");
+    return;
 }
+
+WorkflowExecutor.Execute(command);
+Console.WriteLine("Command executed successfully.");
