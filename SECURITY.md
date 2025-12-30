@@ -2,9 +2,7 @@
 
 ## Supported Versions
 
-This is a personal learning repository for Architecture Reasoning in Practice. As such, it primarily contains documentation and learning materials.
-
-This repository contains conceptual and reasoning content only. There are no executable artifacts.
+This repository demonstrates C# modernization practices using C# 12, 13, and 14 features. It contains example code and documentation for learning and reference purposes.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -30,7 +28,7 @@ This repository follows security best practices:
 
 ## Note
 
-Since this is primarily a documentation and learning repository, security concerns are minimal. However, if you find any issues related to:
+Since this is primarily a demonstration and learning repository, security concerns are minimal. However, if you find any issues related to:
 
 - Exposed credentials or secrets
 - Malicious content
@@ -40,4 +38,4 @@ Please report them using the process above.
 
 ---
 
-**Last Updated**: December 24, 2025
+**Last Updated**: December 30, 2025

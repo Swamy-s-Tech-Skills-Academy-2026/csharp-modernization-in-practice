@@ -1,53 +1,63 @@
-# Contributing to Architecture Reasoning in Practice
+# Contributing to C# Modernization in Practice
 
-This is a **personal learning repository** documenting hands-on practice in architectural reasoning.
+This repository demonstrates how selected C# 12, 13, and 14 language features can be applied to modernize an existing console-based application.
 
 ## Purpose
 
-This repository is primarily for personal learning and documentation. If you're following a similar learning path, feel free to use this as a reference, but please note:
-
-- This is **not an official repository**
-- Content is based on personal study and practice
-- The structure and content reflect one individual's learning approach
-
-## Focus Areas
-
-This repository focuses on:
-
-- **Reasoning Foundations** - Problem framing, clarification strategies, assumptions and constraints
-- **Answer Structuring** - Top-down communication, depth control, time-boxed reasoning
-- **Trade-off Articulation** - Cost vs scale, simplicity vs flexibility, risk and failure framing
-- **Role Perspectives** - How different roles think when solving the same ambiguous problem
-- **Evaluation Scenarios** - Vague problems, conflicting requirements, legacy modernization
-
-> **📋 Important Distinction**: This repository focuses on reasoning and articulation. Detailed system designs and implementations live in `system-design-in-practice`.
+This repository focuses on **practical, high-impact improvements** in readability, safety, and maintainability. The focus is not on showcasing every new feature, but on demonstrating how incremental language upgrades improve code quality without architectural rewrites.
 
 ## Repository Structure
 
-See [`docs/01_repository-structure.md`](docs/01_repository-structure.md) for the complete repository structure (single source of truth). See [README.md](README.md) for the learning path.
+See [`docs/01_repository-structure.md`](docs/01_repository-structure.md) for the complete repository structure (single source of truth). See [README.md](README.md) for the learning path and modernization overview.
 
-## Content Contribution Guidelines
+## Focus Areas
 
-### Scenario Contribution Guidelines
+This repository demonstrates:
 
-- Must use the standard scenario template: [`docs/templates/scenario-template.md`](docs/templates/scenario-template.md)
-- Must focus on reasoning practice, not “answer keys” or full system designs
-- Must explicitly surface ambiguities, assumptions, and trade-offs
-- Must avoid hiring-process language; use role-agnostic “senior technical evaluation contexts” framing instead
+- **C# 12 Features**: Primary constructors, collection expressions, `ref readonly` parameters, type aliases
+- **C# 13 Features**: Pattern matching improvements, required members evolution
+- **C# 14 Features**: Switch expressions, declarative policies
 
-### Pattern / Note Contribution Guidelines
+Each modernization step follows a **Before → After → Why it matters** pattern.
 
-- Must start with a clear H1 title (`# ...`)
-- Prefer pattern-oriented structure (Summary → When to Use → How to Apply)
-- Keep content modular and reusable; avoid duplicating `src/resources/`
+## Code Contribution Guidelines
 
-### Language & Intent Discipline
+### Before/After Structure
 
-- Avoid hiring-process phrasing in repository content
-- Prefer: “design review”, “promotion panel”, “leadership discussion”, “technical evaluation context”
+- **Legacy code** (`src/legacy/`) represents traditional C# style (pre-C# 12)
+- **Modern code** (`src/modern/`) shows modernized implementations using C# 12–14
+- Maintain parallel structure between legacy and modern for easy comparison
+
+### Modernization Principles
+
+1. **Incremental**: Changes should be incremental, not disruptive
+2. **Comparable**: Every change should be easily comparable between legacy and modern
+3. **Testable**: All changes must have corresponding tests
+4. **Documented**: Architecture decisions should be documented in `docs/architecture-decisions/`
+
+### Test Requirements
+
+- Same test cases should be applied to both legacy and modern implementations
+- Tests should validate correctness and demonstrate benefits
+- Test projects should target `.NET 10`
+
+## Architecture Decision Records (ADRs)
+
+When making significant modernization decisions, create an ADR in `docs/architecture-decisions/`:
+
+- Document the context
+- Explain the decision
+- Describe consequences and trade-offs
+
+See existing ADRs for examples:
+
+- ADR-001: Primary Constructors
+- ADR-002: Collection Expressions
+- ADR-003: `ref readonly` Parameters
+- ADR-004: Switch Expressions
 
 ## Notes
 
-- This is a personal learning repository
-- Content is organized for practice and skill development
-- Focus is on architectural reasoning, not specific technologies
+- This repository focuses on language-level modernization, not architectural rewrites
+- The goal is to show how modern C# improves code quality without changing the problem domain
+- All examples should be realistic and applicable to enterprise codebases
