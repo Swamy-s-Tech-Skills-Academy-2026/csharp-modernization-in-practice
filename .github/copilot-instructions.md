@@ -69,6 +69,8 @@
 - Near-exact matches (potential quote matches)
 - Phrase matches (in strict mode: `-Strict`)
 
+**Note**: The `source-material/` directory (git-ignored) is used as a staging area for source content before transformation. The `Verify-ZeroCopy.ps1` script checks content against files in `source-material/` to ensure transformative content creation.
+
 **Remember**: All content must be transformative, not reformative. Even quotes and "Key Principle" sections must use original phrasing.
 
 ### 3. Modernization Principles

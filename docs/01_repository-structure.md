@@ -87,9 +87,6 @@ csharp-modernization-in-practice/
 │       ├── Domain/
 │       └── Workflows/
 │
-├── source-material/
-│   └── intention-of-this-repo.md
-│
 └── tools/
     └── psscripts/
         ├── Compare-DocFiles.ps1
@@ -149,7 +146,6 @@ This repository is organized to enable **side-by-side comparison** between legac
 - **`.copilot/`**: GitHub Copilot configuration and temporary files
 - **`.cursor/`**: Cursor AI rules and configuration files
 - **`docs/`**: Additional documentation, architecture decisions, images, and planning materials
-- **`source-material/`**: Source materials and planning documents (git-ignored)
 - **`tools/`**: PowerShell scripts for repository maintenance and validation
 
 ---
@@ -159,12 +155,14 @@ This repository is organized to enable **side-by-side comparison** between legac
 ### `.copilot/`
 
 GitHub Copilot configuration directory:
+
 - `settings.json`: Copilot settings and configuration
 - `tmp/`: Temporary files (git-ignored)
 
 ### `.cursor/`
 
 Cursor AI rules directory:
+
 - `rules/`: Modular rule files for Cursor AI
   - `01_educational-content-rules.mdc`: Code modernization rules
   - `02_repository-structure.mdc`: Repository structure context
@@ -178,6 +176,7 @@ Cursor AI rules directory:
 ### `.github/`
 
 GitHub configuration:
+
 - `ISSUE_TEMPLATE/`: Issue templates for bug reports, questions, and content suggestions
 - `workflows/`: GitHub Actions workflows
   - `content-compliance.yml`: Content compliance checks

@@ -33,12 +33,16 @@ See: `01_educational-content-rules.mdc` for complete details and applicability.
 
 **Available Automation** (tools/psscripts/):
 
+- `Compare-DocFiles.ps1` - Compare multiple documentation files
+- `Detect-PotentialCopiedContent.ps1` - Heuristic scanner for potential copied content
+- `Find-DuplicateContent.ps1` - Find duplicate content in files
 - `Get-FileStats.ps1` - File statistics analysis
 - `Get-MarkdownSummary.ps1` - Markdown file analysis
-- `Get-RepoStats.ps1` - Repository overview
-- `Compare-DocFiles.ps1` - Compare multiple files
-- `Find-DuplicateContent.ps1` - Find duplicate headings
+- `Get-RepoStats.ps1` - Repository overview statistics
 - `Quick-HealthCheck.ps1` - Fast workspace health check
+- `Test-ContentCompliance.ps1` - Content compliance validation
+- `Validate-FileReferences.ps1` - Validate file references in markdown
+- `Verify-ZeroCopy.ps1` - Zero-copy policy verification
 
 ### 3. Update Verification Protocol (CRITICAL)
 
