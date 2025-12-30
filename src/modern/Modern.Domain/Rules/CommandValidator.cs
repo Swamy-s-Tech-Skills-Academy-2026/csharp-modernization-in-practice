@@ -14,8 +14,14 @@ public static class CommandValidator
         private string _element0;
     }
 
-    private static readonly AllowedPrefixes Prefixes =
-        new() { "Run", "Query", "Check" };
+    private static readonly AllowedPrefixes Prefixes;
+
+    static CommandValidator()
+    {
+        Prefixes[0] = "Run";
+        Prefixes[1] = "Query";
+        Prefixes[2] = "Check";
+    }
 
     public static bool HasValidPrefix(string commandName)
     {
