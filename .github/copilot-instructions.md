@@ -50,6 +50,11 @@
 
 **CRITICAL**: All content (documentation, code comments, markdown files) must be transformative, not reformative.
 
+**APPLICABILITY**: This policy applies to:
+
+- **A. Content Creation**: When creating new documentation, code comments, or markdown files
+- **B. Content Review**: When reviewing existing content before merging or publishing
+
 ❌ **NEVER** copy text verbatim from books, articles, websites, videos, or third-party materials  
 ❌ **NEVER** mirror a source's outline, section order, headings, or example sequence  
 ❌ **NEVER** use "light paraphrasing" — must transform completely  
@@ -229,6 +234,7 @@ Before publishing any modernization:
 3. ✅ Are tests comprehensive and passing?
 4. ✅ Is the modernization documented?
 5. ✅ Does this improve readability, safety, or maintainability?
+6. ✅ **Zero-Copy Policy verified**: All content is transformative, not reformative
 
 ---
 

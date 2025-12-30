@@ -34,6 +34,11 @@
 
 **CRITICAL**: All content (documentation, code comments, markdown files) must be transformative, not reformative.
 
+**APPLICABILITY**: This policy applies to:
+
+- **A. Content Creation**: When creating new documentation, code comments, or markdown files
+- **B. Content Review**: When reviewing existing content before merging or publishing
+
 ❌ **NEVER** copy text verbatim from books, articles, websites, videos, or third-party materials  
 ❌ **NEVER** mirror a source's outline, section order, headings, or example sequence  
 ❌ **NEVER** use "light paraphrasing" — must transform completely  
@@ -86,7 +91,7 @@
 
 **CRITICAL**: Legacy and modern code must maintain parallel structure:
 
-```
+```text
 src/
 ├── legacy/
 │   ├── AppHost/
@@ -218,6 +223,7 @@ All code must demonstrate:
 
 #### 4. Documentation Review
 
+- [ ] **Zero-Copy Policy verified**: Content is transformative, not reformative
 - [ ] ADR created for significant decisions
 - [ ] Code comments are clear and helpful
 - [ ] README updated if structure changed
