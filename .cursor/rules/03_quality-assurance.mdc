@@ -1,0 +1,64 @@
+# Quality Assurance Checklist
+
+**Version**: 1.1  
+**Last Updated**: November 23, 2025
+
+---
+
+## ✅ Quality Assurance Checklist
+
+**Before ANY content creation or modification**:
+
+### Content Quality (Architecture Reasoning Standards)
+
+**APPLICABILITY**: 
+- **Practice Content** (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, `src/03_tradeoff-articulation/`, `src/04_role-perspectives/`, `src/05_evaluation-scenarios/`): All rules apply strictly
+
+- [ ] **Zero-Copy Policy Verified**: No verbatim text from sources; completely transformed
+  - [ ] **All quotes transformed**: Even "Key Principle" quotes must be original phrasing
+  - [ ] **No verbatim examples**: All examples rewritten with original phrasing
+  - [ ] **Manual verification**: Search for known source material phrases in content
+- [ ] **Transformative Workflow Applied**: Fresh outline, new examples, original explanations
+- [ ] **25-Minute Segment Compliance**: 
+  - Domain content: Content within 150 lines, modular structure (RECOMMENDED)
+  - Lab documentation: Content within 150 lines recommended, but flexible
+- [ ] **5 Required Metadata Fields** (Domain Content Only): learning_level, prerequisites, estimated_time, learning_objectives, related_topics
+- [ ] **Original Examples**: All code, diagrams, datasets, and exercises are original
+- [ ] **ASCII-First Diagrams**: Diagrams redrawn in ASCII, never embedded copyrighted figures
+- [ ] **Learning Objectives**: Clear, specific, and measurable outcomes
+- [ ] **Progressive Scaffolding**: Foundations → Practice → Pitfalls → Next Steps
+- [ ] **Proper Learning Level**: Assigned (Stage 1-9 or Beginner/Intermediate/Advanced)
+- [ ] **Cross-References**: Prerequisites, builds-upon, enables, cross-refs included
+- [ ] **Quality Gate Passed**: All 6 quality gate questions answered affirmatively
+
+### Technical Quality
+
+- [ ] Character encoding verified (UTF-8, no symbols)
+- [ ] **YAML frontmatter validated** (Domain Content Only): No placeholder patterns (`$101_`, `$102_`, `$103_`), `enables:` key present, proper structure
+  - **Note**: Lab files (`src/labs/`) do NOT require YAML frontmatter
+- [ ] **File references validated**: All file references point to existing files (run `.\tools\psscripts\Validate-FileReferences.ps1`)
+- [ ] **No broken references**: All YAML and markdown links resolve correctly
+- [ ] **File naming validated**: **CRITICAL** - Check for `00_` prefix - **NEVER ALLOWED** (applies to ALL files including `docs/`)
+  - Run: `Get-ChildItem -Recurse -Filter "*00_*"` to find violations
+  - All numbered files must use `01_`, `02_`, etc. - **NO EXCEPTIONS**
+- [ ] Markdownlint passes: `npx markdownlint-cli2 "**/*.md"` (uses `.markdownlint-cli2.yaml` and `.markdownlint.json` automatically)
+- [ ] Lychee link check passes: `docker run --rm -v "${PWD}:/input:ro" lycheeverse/lychee --config /input/lychee.toml "/input/**/*.md"` (requires Docker)
+- [ ] **Numbering consistent**: Uses `01_`, `02_`, etc. - **NEVER `00_`** (applies to ALL files including `docs/`)
+- [ ] Code fences have language specified
+- [ ] Blank lines proper (MD022/031/032)
+- [ ] 2-space list indentation (MD007)
+
+### Documentation Updates (CRITICAL)
+
+- [ ] ✅ `.github/copilot-instructions.md` updated if structure changed
+- [ ] ✅ `README.md` updated if structure changed
+- [ ] ✅ Related documentation updated
+- [ ] ✅ Verification script run: `.\Quick-HealthCheck.ps1`
+
+### File Reference Validation (CRITICAL)
+
+- [ ] ✅ **All file references validated**: Run `.\tools\psscripts\Validate-FileReferences.ps1`
+- [ ] ✅ **No broken references**: All YAML `prerequisites`, `builds_upon`, `enables` references exist
+- [ ] ✅ **All markdown links work**: Test navigation links in preview
+- [ ] ✅ **Part file references correct**: If files were split, references use exact part file names
+- [ ] ✅ **Updated after splitting**: If you split a file, updated ALL references to that file

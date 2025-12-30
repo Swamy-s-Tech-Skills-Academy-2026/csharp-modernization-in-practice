@@ -1,0 +1,324 @@
+[
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\CODE_OF_CONDUCT.md",
+    "Lines": 39,
+    "Words": 258,
+    "HeadingCount": 9,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\CONTRIBUTING.md",
+    "Lines": 53,
+    "Words": 317,
+    "HeadingCount": 9,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\README.md",
+    "Lines": 292,
+    "Words": 1337,
+    "HeadingCount": 29,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\SECURITY.md",
+    "Lines": 43,
+    "Words": 182,
+    "HeadingCount": 5,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\.cursor\\rules\\README.md",
+    "Lines": 73,
+    "Words": 276,
+    "HeadingCount": 12,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\.github\\copilot-instructions.md",
+    "Lines": 347,
+    "Words": 1619,
+    "HeadingCount": 36,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\.github\\pull_request_template.md",
+    "Lines": 45,
+    "Words": 200,
+    "HeadingCount": 6,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\.github\\ISSUE_TEMPLATE\\bug_report.md",
+    "Lines": 40,
+    "Words": 133,
+    "HeadingCount": 6,
+    "HasH1": false
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\.github\\ISSUE_TEMPLATE\\content_suggestion.md",
+    "Lines": 44,
+    "Words": 174,
+    "HeadingCount": 5,
+    "HasH1": false
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\.github\\ISSUE_TEMPLATE\\question.md",
+    "Lines": 31,
+    "Words": 110,
+    "HeadingCount": 5,
+    "HasH1": false
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\docs\\01_repository-structure.md",
+    "Lines": 166,
+    "Words": 631,
+    "HeadingCount": 17,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\docs\\templates\\pattern-note-template.md",
+    "Lines": 17,
+    "Words": 49,
+    "HeadingCount": 5,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\docs\\templates\\scenario-template.md",
+    "Lines": 25,
+    "Words": 87,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\source-material\\Architect_Interview.md",
+    "Lines": 1113,
+    "Words": 4359,
+    "HeadingCount": 86,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\source-material\\Architect_Preparation_Guide.md",
+    "Lines": 550,
+    "Words": 2274,
+    "HeadingCount": 38,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\source-material\\content.md",
+    "Lines": 77,
+    "Words": 452,
+    "HeadingCount": 0,
+    "HasH1": false
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\source-material\\README.md",
+    "Lines": 74,
+    "Words": 430,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\01_reasoning-foundations\\assumptions-and-constraints.md",
+    "Lines": 16,
+    "Words": 62,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\01_reasoning-foundations\\clarification-strategies.md",
+    "Lines": 16,
+    "Words": 59,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\01_reasoning-foundations\\decision-rationale-framing.md",
+    "Lines": 69,
+    "Words": 247,
+    "HeadingCount": 5,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\01_reasoning-foundations\\problem-framing.md",
+    "Lines": 16,
+    "Words": 59,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\02_answer-structuring\\architecture-explanation-structure.md",
+    "Lines": 62,
+    "Words": 279,
+    "HeadingCount": 5,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\02_answer-structuring\\depth-control.md",
+    "Lines": 16,
+    "Words": 67,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\02_answer-structuring\\time-boxed-reasoning.md",
+    "Lines": 16,
+    "Words": 63,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\02_answer-structuring\\top-down-communication.md",
+    "Lines": 16,
+    "Words": 60,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\cost-vs-scale.md",
+    "Lines": 16,
+    "Words": 58,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\cqrs-selective-application.md",
+    "Lines": 78,
+    "Words": 362,
+    "HeadingCount": 6,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\edge-security-layered-defense.md",
+    "Lines": 79,
+    "Words": 360,
+    "HeadingCount": 6,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\genai-production-integration.md",
+    "Lines": 85,
+    "Words": 342,
+    "HeadingCount": 6,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\micro-frontends-rationale.md",
+    "Lines": 84,
+    "Words": 348,
+    "HeadingCount": 6,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\polyglot-persistence-rationale.md",
+    "Lines": 82,
+    "Words": 379,
+    "HeadingCount": 6,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\risk-and-failure-framing.md",
+    "Lines": 16,
+    "Words": 60,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\03_tradeoff-articulation\\simplicity-vs-flexibility.md",
+    "Lines": 16,
+    "Words": 60,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\04_role-perspectives\\architect.md",
+    "Lines": 30,
+    "Words": 134,
+    "HeadingCount": 4,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\04_role-perspectives\\engineering-manager.md",
+    "Lines": 11,
+    "Words": 35,
+    "HeadingCount": 3,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\04_role-perspectives\\principal-engineer.md",
+    "Lines": 11,
+    "Words": 38,
+    "HeadingCount": 3,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\04_role-perspectives\\staff-engineer.md",
+    "Lines": 11,
+    "Words": 31,
+    "HeadingCount": 3,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\05_evaluation-scenarios\\conflicting-requirements.md",
+    "Lines": 30,
+    "Words": 109,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\05_evaluation-scenarios\\explaining-complex-architecture.md",
+    "Lines": 68,
+    "Words": 384,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\05_evaluation-scenarios\\legacy-modernization.md",
+    "Lines": 30,
+    "Words": 113,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\05_evaluation-scenarios\\managing-complexity-trade-offs.md",
+    "Lines": 75,
+    "Words": 368,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\05_evaluation-scenarios\\microservices-transaction-management.md",
+    "Lines": 72,
+    "Words": 356,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\05_evaluation-scenarios\\vague-problem.md",
+    "Lines": 30,
+    "Words": 108,
+    "HeadingCount": 7,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\resources\\frameworks.md",
+    "Lines": 5,
+    "Words": 9,
+    "HeadingCount": 2,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\resources\\reference-materials.md",
+    "Lines": 5,
+    "Words": 12,
+    "HeadingCount": 2,
+    "HasH1": true
+  },
+  {
+    "File": "D:\\SAJ-2026\\architecture-reasoning-in-practice\\src\\resources\\tools.md",
+    "Lines": 5,
+    "Words": 12,
+    "HeadingCount": 2,
+    "HasH1": true
+  }
+]

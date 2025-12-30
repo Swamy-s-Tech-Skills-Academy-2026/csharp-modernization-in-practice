@@ -1,0 +1,45 @@
+# Cross-Domain Integration
+
+**Version**: 1.0  
+**Last Updated**: November 6, 2025
+
+---
+
+## 🔗 Cross-Domain Integration
+
+All new content must connect to:
+
+- Upstream prerequisites
+- Peer topics it builds upon
+- Downstream applications it enables
+- Related stages in learning progression
+
+**Connection Pattern**:
+
+```markdown
+## 🔗 Related Topics
+
+**Prerequisites**:
+- [Link to prerequisite content]
+
+**Builds Upon**:
+- [Link to foundational concepts]
+
+**Enables**:
+- [Link to downstream applications]
+
+**Cross-References**:
+- [Link to related domains]
+```
+
+---
+
+## Integration Requirements
+
+When creating content, always:
+
+1. **Identify Prerequisites**: What must learners know first?
+2. **Link to Foundations**: What does this build upon?
+3. **Show Applications**: What does this enable?
+4. **Cross-Reference**: Connect to related Architecture Reasoning thinking modes (01_reasoning-foundations, 02_answer-structuring, 03_tradeoff-articulation, 04_role-perspectives, 05_evaluation-scenarios)
+5. **Stage Mapping**: Which learning stages use this content?

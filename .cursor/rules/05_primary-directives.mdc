@@ -1,0 +1,161 @@
+# Primary Directives
+
+**Version**: 1.2  
+**Last Updated**: December 24, 2025
+
+---
+
+## 🎯 Primary Directives
+
+### 1. Architecture Reasoning Content Rules (MANDATORY)
+
+**All content creation must follow these rules, with applicability based on content type:**
+
+- **Practice Content** (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, `src/03_tradeoff-articulation/`, `src/04_role-perspectives/`, `src/05_evaluation-scenarios/`): File naming, zero-copy policy, file references (YAML frontmatter recommended, line limits recommended)
+- **Resources** (`src/resources/`): Logical naming, no numbering required
+
+See: `01_educational-content-rules.mdc` for complete details and applicability.
+
+### 2. Automation-First Approach
+
+✅ **ALWAYS**: Create reusable PowerShell scripts for repetitive tasks  
+✅ **ALWAYS**: Use existing scripts in `tools/psscripts/` first  
+✅ **ALWAYS**: Enhance existing scripts rather than duplicating  
+❌ **NEVER**: Execute individual commands for tasks repeated 2+ times
+
+**Decision Tree**:
+
+1. Check `tools/psscripts/` for existing script
+2. Enhance existing script if close match
+3. Create new `.ps1` for any repeated task
+4. Document with examples and parameters
+
+**Available Automation** (tools/psscripts/):
+
+- `Get-FileStats.ps1` - File statistics analysis
+- `Get-MarkdownSummary.ps1` - Markdown file analysis
+- `Get-RepoStats.ps1` - Repository overview
+- `Compare-DocFiles.ps1` - Compare multiple files
+- `Find-DuplicateContent.ps1` - Find duplicate headings
+- `Quick-HealthCheck.ps1` - Fast workspace health check
+
+### 3. Update Verification Protocol (CRITICAL)
+
+**After ANY structural change, IMMEDIATELY update**:
+
+1. ✅ **`docs/01_repository-structure.md`** - **UPDATE THIS FIRST** (Single source of truth)
+2. ✅ `.github/copilot-instructions.md` - Reference to `docs/01_repository-structure.md`
+3. ✅ `README.md` - Reference to `docs/01_repository-structure.md`
+4. ✅ `.cursor/rules/02_repository-structure.mdc` - Reference to `docs/01_repository-structure.md`
+5. ✅ Relevant documentation files
+
+**Self-Check Question**: "Did I update `docs/01_repository-structure.md` first?" - If no, STOP and do it NOW.
+
+### 4. File Naming Validation (CRITICAL)
+
+**Before creating or committing ANY numbered file, validate naming**:
+
+1. ✅ **Check for `00_` prefix**: **NEVER ALLOWED** - Use `01_` instead
+2. ✅ **Verify scope**: Rule applies to **ALL files** including:
+   - Practice content (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, etc.)
+   - Documentation files (`docs/`)
+   - Any numbered files anywhere in repository
+3. ✅ **Quick validation**: Run `Get-ChildItem -Recurse -Filter "*00_*"` to find violations
+4. ✅ **NO EXCEPTIONS**: `00_` is NEVER allowed, even for meta/documentation files
+
+**Self-Check Question**: "Does this file use `00_` prefix?" - If yes, RENAME to `01_` or appropriate number.
+
+### 5. Chain-of-Thought + ReAct + Reasoning
+
+**Apply systematic reasoning to every task using this framework**:
+
+#### Chain-of-Thought (CoT)
+
+Break down complex problems into logical steps:
+
+- **Decompose**: Split large tasks into smaller, manageable components
+- **Sequential Logic**: Show clear progression from problem → solution
+- **Explicit Reasoning**: Articulate WHY each step is necessary
+- **Intermediate Steps**: Don't jump to conclusions; show the work
+
+**Example**: "To consolidate docs, I need to: 1) Read all files, 2) Identify unique content, 3) Extract and merge, 4) Verify no loss, 5) Update references"
+
+#### ReAct (Reasoning + Acting)
+
+Interleave thinking with action in iterative cycles:
+
+1. **OBSERVE** 🔍
+   - Current state: What exists now?
+   - User request: What is being asked?
+   - Context: What's the broader situation?
+   - Constraints: What limitations exist?
+
+2. **ANALYZE** 🧠
+   - Root cause: Why does this issue exist?
+   - Dependencies: What else is affected?
+   - Implications: What are the consequences?
+   - Alternatives: What other approaches exist?
+
+3. **PLAN** 📋
+   - Step-by-step approach with clear milestones
+   - Verification points at each step
+   - Rollback strategy if issues arise
+   - Resource requirements (scripts, tools, time)
+
+4. **ACT** ⚡
+   - Execute with automation where possible
+   - Use existing scripts before creating new ones
+   - Make incremental changes, not big bangs
+   - Document as you go
+
+5. **VERIFY** ✅
+   - Check results against expected outcomes
+   - Run validation tools (markdownlint, Quick-HealthCheck)
+   - Update documentation (rules files, README.md)
+   - Test edge cases
+
+6. **REFLECT** 🤔
+   - What worked well?
+   - What could be improved?
+   - What would prevent this issue in the future?
+   - Update instructions/scripts based on learnings
+
+#### System 2 Reasoning
+
+**Engage deliberate, analytical thinking for complex decisions**:
+
+- **Question Assumptions**: Don't accept requirements at face value
+- **Consider Trade-offs**: Every decision has pros and cons
+- **Think Long-term**: How will this affect future work?
+- **Pattern Recognition**: Have we solved similar problems before?
+- **Meta-cognition**: Monitor your own reasoning process
+
+**Red Flags Requiring Deep Analysis**:
+
+- ⚠️ Structural changes (affects multiple files)
+- ⚠️ Deletions (potential information loss)
+- ⚠️ Consolidations (complexity in merging)
+- ⚠️ New patterns (precedent-setting decisions)
+- ⚠️ User frustration (indicates process failure)
+
+#### Practical Application
+
+**For Simple Tasks** (read file, create script):
+
+- Quick CoT: "Need to read file → use read_file tool → done"
+- Minimal reasoning sufficient
+
+**For Complex Tasks** (consolidate docs, restructure):
+
+- Full ReAct cycle required
+- Multiple OBSERVE → ANALYZE → PLAN → ACT → VERIFY iterations
+- Deep System 2 reasoning for critical decisions
+- Document reasoning in commit messages
+
+**When User Points Out Mistakes**:
+
+1. **Acknowledge**: "You're right, I missed X"
+2. **Root Cause**: "This happened because..."
+3. **Immediate Fix**: Correct the issue
+4. **Prevention**: "I'm adding [protocol/check/script] to prevent recurrence"
+5. **Update Instructions**: Modify rules files to embed learning

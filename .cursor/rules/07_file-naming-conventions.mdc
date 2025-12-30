@@ -1,0 +1,444 @@
+# File Naming Conventions (Architecture Reasoning in Practice)
+
+**Version**: 1.0  
+**Last Updated**: December 24, 2025  
+**Priority**: MANDATORY - All new content must follow these conventions
+
+---
+
+## 🎯 Core Principle
+
+**Files should represent concepts.  
+Folders should represent structure.  
+Numbers should represent ordering — sparingly.**
+
+If you remember only one line, remember this.
+
+---
+
+## ❌ Anti-Patterns (What NOT to Do)
+
+### ❌ Do NOT encode hierarchy in filenames
+
+**Avoid**:
+```
+Topic-Part1-A.md
+Topic-Part1-B.md
+Topic-Part1-A-A.md
+Topic-Part1-B-A.md
+```
+
+**Why this is wrong**:
+- Filenames become brittle and ugly
+- `A/B/C` carries no semantic meaning
+- Refactoring becomes painful
+- URLs are hard to read
+- GitHub navigation is confusing
+
+### ❌ Avoid arbitrary "Part" unless it's a published volume
+
+**Avoid** (when semantic names are better):
+```
+Glossary-Part1.md
+Glossary-Part2.md
+```
+
+**Why this is wrong**:
+- "Part" is an editorial accident, not a concept
+- No semantic meaning for readers
+- Hard to maintain and reorganize
+
+**Note**: `-part1.md`, `-part2.md` is **ACCEPTABLE** for mechanical splitting when content exceeds 150 lines and cannot be split into distinct concepts. This is better than `Part1-A`, `Part1-B` patterns.
+
+### ❌ Avoid mixing sequence, hierarchy, and versioning
+
+**Avoid**:
+```
+03_Architecture-Patterns-Part1-A-A.md
+03_Architecture-Patterns-Part1-B-B.md
+```
+
+**Why this is wrong**:
+- Confuses sequence with structure
+- Makes it impossible to understand relationships
+- Breaks when content is reorganized
+
+---
+
+## ✅ Preferred Patterns
+
+### Pattern 1: Semantic Names (Best for Most Cases)
+
+**Use semantic names that describe the content**:
+
+```
+case-studies/
+├── url-shortener/
+│   ├── requirements.md
+│   ├── high-level-design.md
+│   ├── low-level-design.md
+│   ├── scalability.md
+│   └── trade-offs.md
+```
+
+**Why this works**:
+- Each file has a clear semantic scope
+- Easy to add, split, or merge
+- GitHub renders `README.md` automatically
+- URLs are clean and stable
+- Maintainer-friendly
+
+### Pattern 2: Ordered Files (For Learning Sequence)
+
+**Use numbered prefixes ONLY when there's a deliberate learning order**:
+
+```
+src/01_reasoning-foundations/
+├── problem-framing.md
+├── clarification-strategies-part1.md
+├── clarification-strategies-part2.md
+├── assumptions-and-constraints-part1.md
+└── assumptions-and-constraints-part2.md
+```
+
+**Use this when**:
+- There is a deliberate reading order
+- You control the learning flow
+- Sequence is part of the educational design
+- Content must be learned in a specific progression
+
+**Current Repository Pattern**: The repository uses numbered prefixes (`01_`, `02_`, etc.) for thinking mode folders (`src/01_reasoning-foundations/` through `src/05_evaluation-scenarios/`). This is appropriate because there is a deliberate learning progression aligned with Architecture Reasoning thinking modes.
+
+### Pattern 3: Split Files with `-part1`, `-part2` (For Mechanical Splitting)
+
+**When content exceeds 150 lines and cannot be split into distinct concepts, use `-part1`, `-part2`**:
+
+```
+02_network-abstractions-part1.md
+02_network-abstractions-part2.md
+```
+
+**Why this works**:
+- Preserves the base slug so links remain predictable
+- Clear that these are parts of the same topic
+- Better than `Part1-A`, `Part1-B` patterns
+- Maintains file reference stability
+
+**When to use**:
+- Content exceeds 150 lines
+- Cannot be split into distinct semantic concepts
+- Content is a single cohesive topic that must be split mechanically
+
+### Pattern 4: Folder-Based Structure (Best for Growth)
+
+**When content naturally groups, use folders**:
+
+```
+src/labs/
+├── lab-01-create-repo.md
+├── lab-02-branching.md
+└── lab-03-pull-requests.md
+
+src/notes/
+├── exam-tips.md
+├── common-mistakes.md
+└── glossary.md
+```
+
+**Why this works**:
+- Structure is clear and navigable
+- Easy to expand without renaming
+- GitHub navigation is intuitive
+- Maintains clean URLs
+
+---
+
+## 📋 Naming Rules
+
+### Rule 1: Use Semantic Names When Possible
+
+**✅ Good**:
+- `requirements.md`
+- `high-level-design.md`
+- `scalability.md`
+- `trade-offs.md`
+
+**❌ Bad**:
+- `Part1-A.md`
+- `Part1-B.md`
+- `Glossary-Part1.md` (unless mechanical splitting)
+
+### Rule 2: Use Hyphens for Multi-Word Names
+
+**✅ Good**:
+- `network-abstractions.md`
+- `consistency-models.md`
+- `back-of-envelope.md`
+
+**❌ Bad**:
+- `network_abstractions.md` (underscores)
+- `networkAbstractions.md` (camelCase)
+- `Network Abstractions.md` (spaces)
+
+### Rule 3: Use Numbers Sparingly
+
+**Use numbers ONLY when**:
+- There's a deliberate learning sequence
+- Order matters for comprehension
+- You're certain the order won't change
+
+**✅ Good** (when sequence matters):
+- `01_abstractions.md`
+- `02_network-abstractions.md`
+- `03_consistency-models.md`
+
+**❌ Bad** (arbitrary numbering):
+- `01_glossary.md` (if order doesn't matter)
+- `02_questions.md` (if order doesn't matter)
+
+**Current Repository**: Uses numbered prefixes for thinking mode folders (`src/01_reasoning-foundations/` through `src/05_evaluation-scenarios/`) because there is a deliberate learning progression aligned with Architecture Reasoning thinking modes. This is appropriate.
+
+### Rule 4: Use Folders for Structure
+
+**When you need hierarchy, use folders, not filenames**:
+
+**✅ Good**:
+```
+case-studies/
+├── url-shortener/
+│   ├── requirements.md
+│   └── scalability.md
+```
+
+**❌ Bad**:
+```
+case-studies-url-shortener-requirements.md
+case-studies-url-shortener-scalability.md
+```
+
+---
+
+## 🔄 When to Split Files
+
+### Decision Framework
+
+**Question 1**: Does the content exceed 150 lines?
+- **Yes** → Continue to Question 2
+- **No** → Keep as single file
+
+**Question 2**: Can the content be split into distinct semantic concepts?
+- **Yes** → Split into separate files with semantic names
+- **No** → Continue to Question 3
+
+**Question 3**: Is there a natural learning progression?
+- **Yes** → Use numbered prefixes: `01_fundamentals.md`, `02_advanced.md`
+- **No** → Use `-part1.md`, `-part2.md` for mechanical splitting
+
+**Question 4**: Will these concepts be expanded further?
+- **Yes** → Create a folder structure
+- **No** → Keep as separate files
+
+### Example: Splitting a Large File
+
+**Before** (problematic):
+```
+01_Network-Abstractions-Part1-A.md  (150 lines)
+01_Network-Abstractions-Part1-B.md  (150 lines)
+```
+
+**After** (semantic - preferred):
+```
+02_network-abstractions-fundamentals.md
+02_network-abstractions-implementation.md
+```
+
+**After** (mechanical splitting - acceptable):
+```
+02_network-abstractions-part1.md
+02_network-abstractions-part2.md
+```
+
+---
+
+## 📁 Folder Structure Best Practices
+
+### Use Folders When:
+
+1. **Content naturally groups**:
+   ```
+   src/labs/
+   ├── lab-01-create-repo.md
+   ├── lab-02-branching.md
+   └── lab-03-pull-requests.md
+   ```
+
+2. **You expect expansion**:
+   ```
+   src/notes/
+   ├── exam-tips.md
+   ├── common-mistakes.md
+   └── glossary.md
+   ```
+
+3. **You need navigation**:
+   ```
+   src/01_reasoning-foundations/
+   ├── README.md  # Index with links
+   ├── problem-framing.md
+   └── clarification-strategies.md
+   ```
+
+### Folder Naming
+
+- Use semantic names: `url-shortener/`, `rate-limiter/`
+- Use hyphens for multi-word: `scalefromzerotomillonusers/`
+- Use numbers ONLY when sequence matters: `01-scalefromzerotomillonusers/`, `05-url-shortener/`
+
+---
+
+## 🔍 Examples: Current Repository Patterns
+
+### Example 1: Educational Content (Numbered Sequence)
+
+**Current** (appropriate):
+```
+src/01_reasoning-foundations/
+├── problem-framing.md
+├── clarification-strategies.md
+└── assumptions-and-constraints.md
+```
+
+**Why this works**:
+- Semantic names describe content purpose
+- Domain folders organize by exam domains
+- Clear and maintainable
+
+### Example 2: Labs (Semantic Names)
+
+**Current** (appropriate):
+```
+src/labs/
+├── lab-01-create-repo.md
+├── lab-02-branching.md
+└── lab-03-pull-requests.md
+```
+
+**Why this works**:
+- Numbered lab files for sequence
+- Semantic names describe lab objectives
+- Easy to navigate and maintain
+
+---
+
+## 🚨 Migration Strategy
+
+### For New Content
+
+**ALWAYS** use semantic names when possible. Use `-part1`, `-part2` only for mechanical splitting when content cannot be split into distinct concepts.
+
+### For Existing Content
+
+**Option A: Gradual Migration** (Recommended)
+- New content uses semantic names
+- Existing content remains until refactored
+- Migrate when files are updated or expanded
+
+**Option B: Systematic Refactoring**
+- Create migration plan
+- Refactor folder by folder
+- Update all references
+- Test thoroughly
+
+---
+
+## 📝 Applying Naming Conventions
+
+### When Creating New Content
+
+**Before writing**:
+
+1. **Choose the right folder** based on learning progression or content type
+   - For practice content: Use numbered thinking mode folders (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, etc.)
+   - For resources: Use `src/resources/` with descriptive names (e.g., `frameworks.md`)
+
+2. **Choose a filename that matches the concept boundary**:
+   - Prefer `NN_concept-name.md` for sequence-based modules (e.g., `01_abstractions.md`)
+   - Prefer `concept-name.md` inside case study folders (e.g., `requirements.md`)
+   - Use `-part1.md`, `-part2.md` only for mechanical splitting
+
+3. **Keep names URL-friendly**: lowercase, hyphen-separated words, avoid spaces
+
+### When Splitting a File
+
+**Decision process**:
+
+1. **First try to split by concept** (new file) instead of by "Part"
+   - Example: `fundamentals.md` and `implementation.md` instead of `topic-part1.md` and `topic-part2.md`
+
+2. **If you still need parts** (mechanical splitting for 150-line limit):
+   - Use `-part1`, `-part2` (not `A/B/C`)
+   - Preserve the base slug so links remain predictable
+   - Example: `02_network-abstractions-part1.md`, `02_network-abstractions-part2.md`
+
+3. **If hierarchy is needed**: Move structure into folders + `README.md` indexes instead of growing filename suffixes
+
+### When Reviewing/Editing Content
+
+**During review, treat naming as part of "maintainability"**:
+
+- **Does the filename match the scope?** If the file title/scope drifted, rename the file or split it
+- **Is hierarchy in the right place?** Move structure into folders + `README.md` indexes instead of growing filename suffixes
+- **Is ordering intentional?** If numbers exist, they should reflect a real learning sequence. Don't renumber casually (it creates churn and breaks links)
+- **Are split files clean?** Prefer `-partN` over letter suffixes; ensure parts are similarly sized and self-contained
+- **Are links updated?** If any rename happened, update all inbound links and re-run validation
+
+### Recommended Patterns by Folder Type
+
+**In thinking mode folders** (e.g., `src/01_reasoning-foundations/`, `src/02_answer-structuring/`):
+- Use semantic names: `topic-name.md` (e.g., `problem-framing.md`, `top-down-communication.md`)
+- If you must split: `topic-name-part1.md`, `topic-name-part2.md`
+
+**In labs folder** (`src/labs/`):
+- Use numbered lab files: `lab-01-description.md`, `lab-02-description.md`
+- Use semantic descriptions in filenames
+
+---
+
+## 📝 Quick Reference
+
+### Decision Tree
+
+```
+Is content > 150 lines?
+├─ No → Single file with semantic name
+└─ Yes → Can it be split into distinct concepts?
+    ├─ Yes → Separate files with semantic names
+    └─ No → Is there a learning sequence?
+        ├─ Yes → Numbered files: 01_, 02_, etc.
+        └─ No → Use -part1, -part2 for mechanical splitting
+```
+
+### Rules of Thumb
+
+- **If you feel the need to add `A/B/C` → you need folders**
+- **If you feel the need to add `Part1/Part2` → you need better conceptual boundaries**
+- **If the filename is doing structural work → it's already wrong**
+- **Use `-part1`, `-part2` only for mechanical splitting** (to respect ~150 line limit), not as a long-term hierarchy
+
+---
+
+## ✅ Checklist for New Files
+
+Before creating a new file, ask:
+
+- [ ] Does the filename describe the content semantically?
+- [ ] Is the filename readable in a URL?
+- [ ] Will the filename survive reordering?
+- [ ] Does the filename work with GitHub navigation?
+- [ ] Am I encoding hierarchy in the filename? (If yes, use folders instead)
+
+---
+
+**Related Rules**:
+- [Educational Content Rules](./01_educational-content-rules.mdc) - Content structure and splitting policy
+- [Repository Structure](./02_repository-structure.mdc) - Folder organization
