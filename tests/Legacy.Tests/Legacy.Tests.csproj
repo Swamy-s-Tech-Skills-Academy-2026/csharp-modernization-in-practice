@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\legacy\Legacy.Domain\Legacy.Domain.csproj" />
+    <ProjectReference Include="..\..\src\legacy\Legacy.Infrastructure\Legacy.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
