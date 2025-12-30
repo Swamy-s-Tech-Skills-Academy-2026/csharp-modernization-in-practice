@@ -419,3 +419,6 @@ FodyWeavers.xsd
 
 ## Source Material
 source-material/
+
+## GitHub Copilot temporary files
+.copilot/tmp/
