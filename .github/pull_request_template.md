@@ -8,38 +8,43 @@
 
 <!-- Mark the relevant option with an 'x' -->
 
+- [ ] Legacy code implementation
+- [ ] Modern code implementation
+- [ ] Test addition/update
+- [ ] Architecture Decision Record (ADR)
 - [ ] Documentation update
-- [ ] New learning content
-- [ ] Lab exercise
 - [ ] Bug fix
 - [ ] Repository structure improvement
 - [ ] Other (please describe):
 
-## Thinking Mode/Area
+## C# Feature Demonstrated
 
-<!-- Which Architecture Reasoning thinking mode does this relate to? -->
+<!-- Which C# 12–14 feature does this relate to? -->
 
-- [ ] Reasoning Foundations
-- [ ] Answer Structuring
-- [ ] Trade-off Articulation
-- [ ] Role Perspectives
-- [ ] Evaluation Scenarios
-- [ ] Resources
+- [ ] Primary constructors (C# 12)
+- [ ] Collection expressions (C# 12)
+- [ ] `ref readonly` parameters (C# 12)
+- [ ] Type aliases (C# 12)
+- [ ] Pattern matching (C# 13)
+- [ ] Required members (C# 13)
+- [ ] Switch expressions (C# 14)
 - [ ] Other (please describe):
 
 ## Checklist
 
 <!-- Mark completed items with an 'x' -->
 
-- [ ] Content follows repository structure guidelines
-- [ ] Markdown linting passes (if applicable)
-- [ ] Links are valid and working
-- [ ] Content is clear and well-organized
-- [ ] No sensitive information included
+- [ ] Code follows repository structure guidelines
+- [ ] Both legacy and modern implementations maintain parallel structure
+- [ ] Tests pass for both implementations
+- [ ] ADR created/updated (if significant change)
 - [ ] README updated (if structure changed)
+- [ ] Code builds without errors
+- [ ] No sensitive information included
 
 ## Additional Notes
 
 <!-- Add any additional context, screenshots, or notes here -->
+
 ---
-**Note**: This is a personal learning repository. PRs are welcome for improvements, corrections, or additional learning materials.
+**Note**: This repository demonstrates C# modernization practices. PRs should maintain the before/after comparison structure and include appropriate tests.

@@ -1,53 +1,51 @@
 # Repository Structure & Context
 
 **Version**: 1.0  
-**Last Updated**: December 24, 2025
+**Last Updated**: December 30, 2025
 
 ---
 
 ## 🧭 Repository Context
 
-**Architecture Reasoning in Practice** is a personal learning repository documenting hands-on practice in architectural reasoning across senior and staff-level technical roles. It provides:
-
-- Structured thinking approaches
-- Trade-off analysis frameworks
-- Clear communication of architectural decisions
-- Practice with ambiguous and open-ended scenarios
+**C# Modernization in Practice** demonstrates how selected C# 12, 13, and 14 language features can be applied to modernize an existing console-based application.
 
 **Target Audience**:
 
-- Swamy (personal learning journey)
-- Senior Software Engineers
-- Principal Software Engineers
-- Staff Engineers
-- Software Architects
-- Solution Architects
-- AI Architects
-- Engineering Managers
-- Principal Consultants
+- Software Engineers modernizing C# codebases
+- Architects evaluating language feature adoption
+- Principal/Staff Engineers leading modernization efforts
+- Development teams planning C# upgrades
 
-**Purpose**: Develops real-world architectural judgment and decision-making capability through structured practice and analysis.
+**Purpose**: Provides practical examples of incremental language-level modernization that improve code quality without architectural rewrites.
 
 ### 🚨 CRITICAL: Repository Purpose
 
-**This repository (`architecture-reasoning-in-practice`) contains:**
+**This repository (`csharp-modernization-in-practice`) contains**:
 
-- ✅ **Practice Content**: Architectural reasoning scenarios and exercises
-- ✅ **Resources**: Frameworks, tools, and reference materials (`src/resources/`)
-- ✅ **Templates**: Standard templates for consistent content (`docs/templates/`)
+- ✅ **Legacy Code**: Traditional C# style (pre-C# 12) in `src/legacy/`
+- ✅ **Modern Code**: Modernized implementations using C# 12–14 in `src/modern/`
+- ✅ **Tests**: Unit tests for both implementations in `tests/`
+- ✅ **Architecture Decisions**: ADR-style documentation in `docs/architecture-decisions/`
 
 ### 📋 Content Type Classifications
 
-**Practice Content** (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, `src/03_tradeoff-articulation/`, `src/04_role-perspectives/`, `src/05_evaluation-scenarios/`):
+**Legacy Code** (`src/legacy/`):
 
-- Purpose: Educational learning materials for architectural reasoning
-- Structure: Each thinking mode has topic-specific markdown files
-- File Naming: Descriptive names (e.g., `problem-framing.md`, `top-down-communication.md`)
+- Purpose: Traditional C# implementation for comparison
+- Structure: Parallel to modern code structure
+- Style: Pre-C# 12, representative of existing systems
 
-**Resources** (`src/resources/`):
+**Modern Code** (`src/modern/`):
 
-- Purpose: Frameworks, tools, and reference materials
-- File Naming: Logical names (`frameworks.md`, `reference-materials.md`, `tools.md`)
+- Purpose: Modernized implementation using C# 12–14 features
+- Structure: Parallel to legacy code structure
+- Style: Demonstrates practical application of modern language features
+
+**Tests** (`tests/`):
+
+- Purpose: Validate correctness and demonstrate benefits
+- Structure: Same test cases for both implementations
+- Coverage: Ensures behavioral equivalence
 
 ---
 
@@ -57,71 +55,58 @@
 
 For the complete repository structure, see: **[docs/01_repository-structure.md](../../docs/01_repository-structure.md)**
 
-### Current Structure Overview (As of December 24, 2025)
+### Current Structure Overview (As of December 30, 2025)
 
 **Note**: This is a summary. For the complete structure with all file names and details, refer to [`docs/01_repository-structure.md`](../../docs/01_repository-structure.md).
 
 **Quick Overview**:
 
-- `src/01_reasoning-foundations/` - Problem framing, clarification strategies, assumptions
-- `src/02_answer-structuring/` - Top-down communication, depth control, time-boxed reasoning
-- `src/03_tradeoff-articulation/` - Cost vs scale, simplicity vs flexibility, risk framing
-- `src/04_role-perspectives/` - How different roles think when solving the same problem
-- `src/05_evaluation-scenarios/` - Vague problems, conflicting requirements, legacy modernization
-- `src/resources/` - Frameworks, tools, and reference materials
-- `docs/templates/` - Scenario + pattern-note templates
-- `.github/workflows/` - CI checks (content compliance)
+- `src/legacy/` - Traditional C# style (pre-C# 12)
+- `src/modern/` - Modernized implementations using C# 12–14
+- `tests/` - Unit tests for both implementations
+- `docs/architecture-decisions/` - ADR-style documentation
 
 ## 📁 Directory Structure Details
 
-### Thinking Mode Directories
+### Source Directories
 
-**src/01_reasoning-foundations/** - Reasoning foundations
+**src/legacy/** - Legacy implementation
 
-- Problem framing
-- Clarification strategies
-- Assumptions and constraints
+- AppHost: Console application entry point
+- Domain: Business logic, models, policies, and rules
+- Workflows: Business process orchestration
 
-**src/02_answer-structuring/** - Answer structuring
+**src/modern/** - Modernized implementation
 
-- Top-down communication
-- Depth control
-- Time-boxed reasoning
+- Same structure as legacy for direct comparison
+- Demonstrates practical application of modern language features
 
-**src/03_tradeoff-articulation/** - Trade-off articulation
+### Test Directories
 
-- Cost vs scale
-- Simplicity vs flexibility
-- Risk and failure framing
+**tests/Legacy.Tests/** - Tests for legacy implementation
 
-**src/04_role-perspectives/** - Role perspectives
+- Domain tests
+- Workflow tests
 
-- Staff Engineer perspective
-- Principal Engineer perspective
-- Architect perspective
-- Engineering Manager perspective
+**tests/Modern.Tests/** - Tests for modernized implementation
 
-**src/05_evaluation-scenarios/** - Evaluation scenarios
+- Same test cases as legacy tests
+- Validates behavioral equivalence
 
-- Vague problems
-- Conflicting requirements
-- Legacy modernization
+### Documentation Directories
 
-### Supporting Directories
+**docs/architecture-decisions/** - Architecture Decision Records
 
-**src/resources/** - Reference materials
-
-- Frameworks
-- Reference materials
-- Tools
+- ADR-001: Primary Constructors
+- ADR-002: Collection Expressions
+- ADR-003: `ref readonly` Parameters
+- ADR-004: Switch Expressions
 
 ## 📞 Support & Escalation
 
-**Questions about reasoning foundations?** → Check `src/01_reasoning-foundations/`
+**Questions about modernization?** → Check `docs/architecture-decisions/`
 
-**Need answer structuring guidance?** → Check `src/02_answer-structuring/`
-
-**Looking for trade-off articulation?** → Check `src/03_tradeoff-articulation/`
+**Need to compare implementations?** → Review `src/legacy/` and `src/modern/`
 
 **Structure outdated?** → Update `docs/01_repository-structure.md` first, then update references in `.github/copilot-instructions.md` and `README.md`
 
@@ -131,5 +116,5 @@ For the complete repository structure, see: **[docs/01_repository-structure.md](
 
 - **Repository**: Check README.md for repository location
 - **Learning Path**: `README.md`
-- **Content Index**: See domain README files
+- **Architecture Decisions**: `docs/architecture-decisions/`
 - **GitHub Copilot Instructions**: `.github/copilot-instructions.md`

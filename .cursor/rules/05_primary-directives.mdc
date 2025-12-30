@@ -7,12 +7,13 @@
 
 ## 🎯 Primary Directives
 
-### 1. Architecture Reasoning Content Rules (MANDATORY)
+### 1. Code Modernization Rules (MANDATORY)
 
-**All content creation must follow these rules, with applicability based on content type:**
+**All code modernization must follow these rules:**
 
-- **Practice Content** (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, `src/03_tradeoff-articulation/`, `src/04_role-perspectives/`, `src/05_evaluation-scenarios/`): File naming, zero-copy policy, file references (YAML frontmatter recommended, line limits recommended)
-- **Resources** (`src/resources/`): Logical naming, no numbering required
+- **Legacy Code** (`src/legacy/`): Traditional C# style, maintain parallel structure
+- **Modern Code** (`src/modern/`): Modernized using C# 12–14 features, maintain parallel structure
+- **Tests** (`tests/`): Same test cases for both implementations
 
 See: `01_educational-content-rules.mdc` for complete details and applicability.
 
@@ -57,7 +58,7 @@ See: `01_educational-content-rules.mdc` for complete details and applicability.
 
 1. ✅ **Check for `00_` prefix**: **NEVER ALLOWED** - Use `01_` instead
 2. ✅ **Verify scope**: Rule applies to **ALL files** including:
-   - Practice content (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, etc.)
+   - Architecture Decision Records (`docs/architecture-decisions/`)
    - Documentation files (`docs/`)
    - Any numbered files anywhere in repository
 3. ✅ **Quick validation**: Run `Get-ChildItem -Recurse -Filter "*00_*"` to find violations

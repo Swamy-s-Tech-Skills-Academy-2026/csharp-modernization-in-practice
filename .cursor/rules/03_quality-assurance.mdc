@@ -1,64 +1,122 @@
 # Quality Assurance Checklist
 
-**Version**: 1.1  
-**Last Updated**: November 23, 2025
+**Version**: 1.0  
+**Last Updated**: December 30, 2025
 
 ---
 
 ## ✅ Quality Assurance Checklist
 
-**Before ANY content creation or modification**:
+**Before ANY code creation or modification**:
 
-### Content Quality (Architecture Reasoning Standards)
+### Code Quality (C# Modernization Standards)
 
 **APPLICABILITY**: 
-- **Practice Content** (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, `src/03_tradeoff-articulation/`, `src/04_role-perspectives/`, `src/05_evaluation-scenarios/`): All rules apply strictly
+- **Legacy Code** (`src/legacy/`): Traditional C# style, representative of existing systems
+- **Modern Code** (`src/modern/`): Modernized using C# 12–14 features
+- **Tests** (`tests/`): Unit tests for both implementations
 
-- [ ] **Zero-Copy Policy Verified**: No verbatim text from sources; completely transformed
-  - [ ] **All quotes transformed**: Even "Key Principle" quotes must be original phrasing
-  - [ ] **No verbatim examples**: All examples rewritten with original phrasing
-  - [ ] **Manual verification**: Search for known source material phrases in content
-- [ ] **Transformative Workflow Applied**: Fresh outline, new examples, original explanations
-- [ ] **25-Minute Segment Compliance**: 
-  - Domain content: Content within 150 lines, modular structure (RECOMMENDED)
-  - Lab documentation: Content within 150 lines recommended, but flexible
-- [ ] **5 Required Metadata Fields** (Domain Content Only): learning_level, prerequisites, estimated_time, learning_objectives, related_topics
-- [ ] **Original Examples**: All code, diagrams, datasets, and exercises are original
-- [ ] **ASCII-First Diagrams**: Diagrams redrawn in ASCII, never embedded copyrighted figures
-- [ ] **Learning Objectives**: Clear, specific, and measurable outcomes
-- [ ] **Progressive Scaffolding**: Foundations → Practice → Pitfalls → Next Steps
-- [ ] **Proper Learning Level**: Assigned (Stage 1-9 or Beginner/Intermediate/Advanced)
-- [ ] **Cross-References**: Prerequisites, builds-upon, enables, cross-refs included
-- [ ] **Quality Gate Passed**: All 6 quality gate questions answered affirmatively
+- [ ] **Parallel Structure Maintained**: Legacy and modern code maintain parallel structure
+- [ ] **Functional Equivalence**: Both implementations behave the same
+- [ ] **C# Feature Application**: Modern code appropriately demonstrates C# 12–14 features
+- [ ] **Code Quality Improved**: Modernization improves readability, safety, or maintainability
+- [ ] **Clear Before/After**: Comparison between legacy and modern is clear
+- [ ] **Comprehensive Tests**: Tests exist for both implementations
+- [ ] **Same Test Cases**: Same test cases applied to both legacy and modern
+- [ ] **All Tests Pass**: Both test suites pass successfully
+- [ ] **ADR Created**: Architecture Decision Record created for significant decisions
+- [ ] **Code Comments**: Clear and helpful comments where needed
 
 ### Technical Quality
 
-- [ ] Character encoding verified (UTF-8, no symbols)
-- [ ] **YAML frontmatter validated** (Domain Content Only): No placeholder patterns (`$101_`, `$102_`, `$103_`), `enables:` key present, proper structure
-  - **Note**: Lab files (`src/labs/`) do NOT require YAML frontmatter
-- [ ] **File references validated**: All file references point to existing files (run `.\tools\psscripts\Validate-FileReferences.ps1`)
-- [ ] **No broken references**: All YAML and markdown links resolve correctly
-- [ ] **File naming validated**: **CRITICAL** - Check for `00_` prefix - **NEVER ALLOWED** (applies to ALL files including `docs/`)
-  - Run: `Get-ChildItem -Recurse -Filter "*00_*"` to find violations
-  - All numbered files must use `01_`, `02_`, etc. - **NO EXCEPTIONS**
-- [ ] Markdownlint passes: `npx markdownlint-cli2 "**/*.md"` (uses `.markdownlint-cli2.yaml` and `.markdownlint.json` automatically)
-- [ ] Lychee link check passes: `docker run --rm -v "${PWD}:/input:ro" lycheeverse/lychee --config /input/lychee.toml "/input/**/*.md"` (requires Docker)
-- [ ] **Numbering consistent**: Uses `01_`, `02_`, etc. - **NEVER `00_`** (applies to ALL files including `docs/`)
-- [ ] Code fences have language specified
-- [ ] Blank lines proper (MD022/031/032)
-- [ ] 2-space list indentation (MD007)
+- [ ] **Build Success**: `dotnet build` completes without errors
+- [ ] **Test Success**: `dotnet test` passes for both implementations
+- [ ] **Code Style**: Follows C# coding conventions
+- [ ] **Meaningful Names**: Variables, methods, and classes have clear names
+- [ ] **XML Documentation**: Public APIs have XML documentation comments
+- [ ] **No Warnings**: Code compiles without warnings (or warnings are justified)
+- [ ] **Character encoding**: UTF-8, no encoding issues
+
+### Documentation Quality
+
+- [ ] **ADR Updated**: Architecture Decision Record created/updated for significant changes
+- [ ] **README Updated**: README updated if structure changed
+- [ ] **Code Comments**: Code is well-commented where needed
+- [ ] **File References**: All file references point to existing files
+- [ ] **No Broken Links**: All markdown links resolve correctly
+
+### Modernization Principles
+
+- [ ] **Language-Level Only**: Modernization focuses on language features, not architecture
+- [ ] **No Behavioral Changes**: Modernization does not change behavior
+- [ ] **Incremental Approach**: Changes are incremental and comparable
+- [ ] **Practical Examples**: Examples are realistic and applicable
+- [ ] **Benefits Documented**: Benefits of modernization are clear
 
 ### Documentation Updates (CRITICAL)
 
+- [ ] ✅ `docs/01_repository-structure.md` updated if structure changed (UPDATE FIRST)
 - [ ] ✅ `.github/copilot-instructions.md` updated if structure changed
 - [ ] ✅ `README.md` updated if structure changed
+- [ ] ✅ `.cursor/rules/02_repository-structure.mdc` updated if structure changed
 - [ ] ✅ Related documentation updated
-- [ ] ✅ Verification script run: `.\Quick-HealthCheck.ps1`
 
-### File Reference Validation (CRITICAL)
+### Pre-Commit Checklist
 
-- [ ] ✅ **All file references validated**: Run `.\tools\psscripts\Validate-FileReferences.ps1`
-- [ ] ✅ **No broken references**: All YAML `prerequisites`, `builds_upon`, `enables` references exist
-- [ ] ✅ **All markdown links work**: Test navigation links in preview
-- [ ] ✅ **Part file references correct**: If files were split, references use exact part file names
-- [ ] ✅ **Updated after splitting**: If you split a file, updated ALL references to that file
+- [ ] Code builds without errors: `dotnet build`
+- [ ] All tests pass: `dotnet test`
+- [ ] Both implementations tested: Legacy and modern test suites pass
+- [ ] ADR created/updated (if significant change)
+- [ ] README updated (if structure changed)
+- [ ] No sensitive information included
+- [ ] Code follows C# conventions
+- [ ] Parallel structure maintained
+
+---
+
+## 🔍 Review Process
+
+### Code Review Checklist
+
+#### Structure Review
+- [ ] Legacy and modern code maintain parallel structure
+- [ ] Code is organized logically
+- [ ] File names are clear and descriptive
+
+#### Modernization Review
+- [ ] Modern code demonstrates C# 12–14 features appropriately
+- [ ] Before/after comparison is clear
+- [ ] Modernization improves code quality
+
+#### Test Review
+- [ ] Tests exist for both implementations
+- [ ] Same test cases applied to both
+- [ ] All tests pass
+- [ ] Tests validate correctness
+
+#### Documentation Review
+- [ ] ADR created for significant decisions
+- [ ] Code comments are clear
+- [ ] README updated if needed
+
+---
+
+## 🛠️ Quality Tools
+
+**Use these tools for quality assurance**:
+
+- `dotnet build` - Build verification
+- `dotnet test` - Test execution
+- Manual code review - Structure and modernization quality
+- Markdown linting (for documentation): `npx markdownlint-cli2 "**/*.md"`
+
+---
+
+## 📝 Review Frequency
+
+- **Before committing**: Review all modified files
+- **After modernization**: Review both legacy and modern implementations
+- **Periodic audits**: Comprehensive review of modernization examples
+- **After major changes**: Full review of affected sections
+
+---

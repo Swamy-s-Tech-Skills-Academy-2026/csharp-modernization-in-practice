@@ -87,38 +87,17 @@ if (Test-Path -LiteralPath $srcPath) {
     }
 }
 
-# Rule: Scenario template compliance
-$scenarioPath = Join-Path $repoRootPath 'src\05_evaluation-scenarios'
-if (Test-Path -LiteralPath $scenarioPath) {
-    $scenarioFiles = Get-ChildItem -Path $scenarioPath -File -Filter '*.md' -ErrorAction SilentlyContinue
+# Rule: Architecture Decision Records (ADRs) compliance
+$adrPath = Join-Path $repoRootPath 'docs\architecture-decisions'
+if (Test-Path -LiteralPath $adrPath) {
+    $adrFiles = Get-ChildItem -Path $adrPath -File -Filter '*.md' -ErrorAction SilentlyContinue
 
-    $requiredHeadings = @(
-        '#',
-        '## Context',
-        '## Ambiguities',
-        '## Clarifying Questions',
-        '## Trade-offs Analysis',
-        '## Structured Reasoning',
-        '## Reflections'
-    )
-
-    foreach ($file in $scenarioFiles) {
-        $content = Get-Content -LiteralPath $file.FullName -Raw -ErrorAction Stop
-
-        foreach ($h in $requiredHeadings) {
-            if ($h -eq '#') {
-                if ($content -notmatch '(?m)^#\s+\S') {
-                    $failed = $true
-                    Write-ComplianceError "Scenario missing H1 title: $($file.FullName)"
-                }
-                continue
-            }
-
-            $escaped = [regex]::Escape($h)
-            if ($content -notmatch "(?m)^$escaped\s*$") {
-                $failed = $true
-                Write-ComplianceError "Scenario missing required heading '$h': $($file.FullName)"
-            }
+    foreach ($file in $adrFiles) {
+        $lines = Get-Content -LiteralPath $file.FullName -ErrorAction Stop
+        $first = Get-FirstNonEmptyLine -Lines $lines
+        if ($null -eq $first -or $first -notmatch '^#\s+\S') {
+            $failed = $true
+            Write-ComplianceError "ADR file must start with an H1 heading: $($file.FullName)"
         }
     }
 }

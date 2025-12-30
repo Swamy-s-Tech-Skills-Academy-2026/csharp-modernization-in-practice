@@ -1,45 +1,45 @@
-# Cross-Domain Integration
+# Cross-Reference Integration
 
 **Version**: 1.0  
-**Last Updated**: November 6, 2025
+**Last Updated**: December 30, 2025
 
 ---
 
-## 🔗 Cross-Domain Integration
+## 🔗 Cross-Reference Integration
 
-All new content must connect to:
+All modernization examples should connect to:
 
-- Upstream prerequisites
-- Peer topics it builds upon
-- Downstream applications it enables
-- Related stages in learning progression
+- Related C# features
+- Architecture Decision Records (ADRs)
+- Related modernization examples
+- Test coverage
 
 **Connection Pattern**:
 
 ```markdown
 ## 🔗 Related Topics
 
-**Prerequisites**:
-- [Link to prerequisite content]
+**Related C# Features**:
+- [Link to related feature examples]
 
-**Builds Upon**:
-- [Link to foundational concepts]
+**Architecture Decisions**:
+- [Link to relevant ADRs]
 
-**Enables**:
-- [Link to downstream applications]
+**Related Examples**:
+- [Link to related modernization examples]
 
-**Cross-References**:
-- [Link to related domains]
+**Tests**:
+- [Link to test files]
 ```
 
 ---
 
 ## Integration Requirements
 
-When creating content, always:
+When creating modernization examples, always:
 
-1. **Identify Prerequisites**: What must learners know first?
-2. **Link to Foundations**: What does this build upon?
-3. **Show Applications**: What does this enable?
-4. **Cross-Reference**: Connect to related Architecture Reasoning thinking modes (01_reasoning-foundations, 02_answer-structuring, 03_tradeoff-articulation, 04_role-perspectives, 05_evaluation-scenarios)
-5. **Stage Mapping**: Which learning stages use this content?
+1. **Identify Related Features**: What other C# features are related?
+2. **Link to ADRs**: What architecture decisions apply?
+3. **Show Connections**: How does this relate to other examples?
+4. **Reference Tests**: Link to test coverage
+5. **Document Dependencies**: What does this modernization depend on or enable?

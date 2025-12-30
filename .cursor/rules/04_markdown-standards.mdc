@@ -36,17 +36,16 @@ Supported languages: `text`, `mermaid`, `bash`, `powershell`, `json`, `yaml`, `p
 
 ---
 
-## 🔍 YAML Frontmatter Validation (CRITICAL)
+## 🔍 Documentation Standards
 
 ### Applicability
 
-**RECOMMENDED FOR**: Practice content files in `src/01_reasoning-foundations/`, `src/02_answer-structuring/`, `src/03_tradeoff-articulation/`, `src/04_role-perspectives/`, and `src/05_evaluation-scenarios/` directories (when content is added).
+**REQUIRED FOR**: Architecture Decision Records (ADRs) in `docs/architecture-decisions/`
 
 **NOT REQUIRED FOR**:
-- Lab files (`src/labs/` directory)
-- Notes files (`src/notes/` directory)
-- Resources files (`src/resources/` directory)
-- General documentation (`docs/` directory)
+- Code files (`.cs` files)
+- Test files
+- General documentation (`docs/` directory, except ADRs)
 - README files
 
 ### Required Structure

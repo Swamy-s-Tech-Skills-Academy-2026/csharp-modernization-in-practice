@@ -1,81 +1,59 @@
-# GitHub Copilot Instructions for Architecture Reasoning in Practice
+# GitHub Copilot Instructions for C# Modernization in Practice
 
-**Version**: 2.0  
-**Last Updated**: December 29, 2025  
-**Repository**: `architecture-reasoning-in-practice`  
+**Version**: 1.0  
+**Last Updated**: December 30, 2025  
+**Repository**: `csharp-modernization-in-practice`  
 **Critical Principle**: Update this file IMMEDIATELY when repository structure changes
 
 ---
 
 ## 🎯 Repository Purpose
 
-**Architecture Reasoning in Practice** is a personal learning repository documenting hands-on practice in architectural reasoning across senior and staff-level technical roles.
+**C# Modernization in Practice** demonstrates how selected C# 12, 13, and 14 language features can be applied to modernize an existing console-based application.
 
 ### What This Repository Provides
 
-- **Structured Thinking**: Systematic approaches to architectural problems
-- **Trade-off Analysis**: Frameworks for evaluating options and making informed decisions
-- **Clear Communication**: Techniques for articulating architectural decisions effectively
-- **Practice Scenarios**: Real-world problems and ambiguous situations for practice
-- **Decision-Making Frameworks**: Tools and methods for architectural judgment
+- **Before/After Comparisons**: Side-by-side legacy and modernized code
+- **Practical Examples**: Real-world modernization scenarios
+- **Architecture Decisions**: ADR-style documentation of modernization choices
+- **Test Coverage**: Unit tests validating correctness and demonstrating benefits
 
 ### Target Audience
 
-- Swamy (personal learning journey)
-- Senior Software Engineers
-- Principal Software Engineers
-- Staff Engineers
-- Software Architects
-- Solution Architects
-- AI Architects
-- Engineering Managers
-- Principal Consultants
+- Software Engineers modernizing C# codebases
+- Architects evaluating language feature adoption
+- Principal/Staff Engineers leading modernization efforts
+- Development teams planning C# upgrades
 
 ### Business Value
 
-- Develops real-world architectural judgment
-- Enhances decision-making capability
-- Improves communication of architectural decisions
-- Practice for senior technical evaluation contexts and professional growth
+- Demonstrates practical application of modern C# features
+- Shows incremental modernization approach
+- Validates correctness through comprehensive testing
+- Provides reference implementation for modernization projects
 
 ---
 
 ## 🎯 Primary Directives
 
-### 1. Architecture Reasoning Content Rules (MANDATORY)
+### 1. Before/After Structure (MANDATORY)
 
-**All content creation must follow these rules, with applicability based on content type:**
+**All code must maintain parallel structure between legacy and modern implementations:**
 
-- **Practice Content** (`src/`): Organized by thinking modes (foundations, structuring, trade-offs, role perspectives, scenarios)
-- **Scenarios** (`src/05_evaluation-scenarios/`): Real-world architectural problems and decision-making exercises (reasoning practice, not answer keys)
-- **Resources** (`src/resources/`): Logical naming, frameworks and reference materials
+- **Legacy code** (`src/legacy/`): Traditional C# style (pre-C# 12), representative of existing systems
+- **Modern code** (`src/modern/`): Modernized implementations using C# 12–14
+- **Tests** (`tests/`): Same test cases applied to both implementations
 
-See: `.cursor/rules/01_educational-content-rules.mdc` for complete details and applicability.
+**Purpose**: Enables side-by-side comparison and demonstrates modernization benefits.
 
-### 2. Automation-First Approach
+### 2. Modernization Principles
 
-✅ **ALWAYS**: Create reusable PowerShell scripts for repetitive tasks  
-✅ **ALWAYS**: Use existing scripts in `tools/psscripts/` first  
-✅ **ALWAYS**: Enhance existing scripts rather than duplicating  
-❌ **NEVER**: Execute individual commands for tasks repeated 2+ times
-
-**Decision Tree**:
-
-1. Check `tools/psscripts/` for existing script
-2. Enhance existing script if close match
-3. Create new `.ps1` for any repeated task
-4. Document with examples and parameters
-
-**Available Automation** (tools/psscripts/):
-
-- `Get-FileStats.ps1` - File statistics analysis
-- `Get-MarkdownSummary.ps1` - Markdown file analysis
-- `Get-RepoStats.ps1` - Repository overview
-- `Compare-DocFiles.ps1` - Compare multiple files
-- `Find-DuplicateContent.ps1` - Find duplicate headings
-- `Quick-HealthCheck.ps1` - Fast workspace health check
-- `Validate-FileReferences.ps1` - Validate file references in markdown
-- `Verify-ZeroCopy.ps1` - **Zero-copy policy verification** (checks for verbatim text from source material)
+✅ **ALWAYS**: Make incremental, comparable changes  
+✅ **ALWAYS**: Document architecture decisions in `docs/architecture-decisions/`  
+✅ **ALWAYS**: Maintain test coverage for both implementations  
+✅ **ALWAYS**: Focus on practical, high-impact improvements  
+❌ **NEVER**: Make architectural rewrites (focus on language-level modernization)  
+❌ **NEVER**: Remove legacy code (keep for comparison)
 
 ### 3. Update Verification Protocol (CRITICAL)
 
@@ -89,19 +67,15 @@ See: `.cursor/rules/01_educational-content-rules.mdc` for complete details and a
 
 **Self-Check Question**: "Did I update `docs/01_repository-structure.md` first?" - If no, STOP and do it NOW.
 
-### 4. File Naming Validation (CRITICAL)
+### 4. C# Feature Selection
 
-**Before creating or committing ANY numbered file, validate naming**:
+**Focus on practical, high-impact language features**:
 
-1. ✅ **Check for `00_` prefix**: **NEVER ALLOWED** - Use `01_` instead
-2. ✅ **Verify scope**: Rule applies to **ALL files** including:
-   - Practice content (`src/01_reasoning-foundations/`, `src/02_answer-structuring/`, etc.)
-   - Documentation files (`docs/`)
-   - Any numbered files anywhere in repository
-3. ✅ **Quick validation**: Run `Get-ChildItem -Recurse -Filter "*00_*"` to find violations
-4. ✅ **NO EXCEPTIONS**: `00_` is NEVER allowed, even for meta/documentation files
+- **C# 12**: Primary constructors, collection expressions, `ref readonly` parameters, type aliases
+- **C# 13**: Pattern matching improvements, required members evolution
+- **C# 14**: Switch expressions, declarative policies
 
-**Self-Check Question**: "Does this file use `00_` prefix?" - If yes, RENAME to `01_` or appropriate number.
+**Not a feature catalog**: Demonstrate modernization value, not exhaustive coverage.
 
 ### 5. Chain-of-Thought + ReAct + Reasoning
 
@@ -110,13 +84,10 @@ See: `.cursor/rules/01_educational-content-rules.mdc` for complete details and a
 #### Chain-of-Thought (CoT)
 
 Break down complex problems into logical steps:
-
 - **Decompose**: Split large tasks into smaller, manageable components
 - **Sequential Logic**: Show clear progression from problem → solution
-- **Explicit Reasoning**: Articulate WHY each step is necessary
+- **Explicit Reasoning**: Articulate WHY each modernization step is necessary
 - **Intermediate Steps**: Don't jump to conclusions; show the work
-
-**Example**: "To consolidate docs, I need to: 1) Read all files, 2) Identify unique content, 3) Extract and merge, 4) Verify no loss, 5) Update references"
 
 #### ReAct (Reasoning + Acting)
 
@@ -148,8 +119,8 @@ Interleave thinking with action in iterative cycles:
 
 5. **VERIFY** ✅
    - Check results against expected outcomes
-   - Run validation tools (markdownlint, Quick-HealthCheck)
-   - Update documentation (rules files, README.md)
+   - Run validation tools (build, test)
+   - Update documentation
    - Test edge cases
 
 6. **REFLECT** 🤔
@@ -157,46 +128,6 @@ Interleave thinking with action in iterative cycles:
    - What could be improved?
    - What would prevent this issue in the future?
    - Update instructions/scripts based on learnings
-
-#### System 2 Reasoning
-
-**Engage deliberate, analytical thinking for complex decisions**:
-
-- **Question Assumptions**: Don't accept requirements at face value
-- **Consider Trade-offs**: Every decision has pros and cons
-- **Think Long-term**: How will this affect future work?
-- **Pattern Recognition**: Have we solved similar problems before?
-- **Meta-cognition**: Monitor your own reasoning process
-
-**Red Flags Requiring Deep Analysis**:
-
-- ⚠️ Structural changes (affects multiple files)
-- ⚠️ Deletions (potential information loss)
-- ⚠️ Consolidations (complexity in merging)
-- ⚠️ New patterns (precedent-setting decisions)
-- ⚠️ User frustration (indicates process failure)
-
-#### Practical Application
-
-**For Simple Tasks** (read file, create script):
-
-- Quick CoT: "Need to read file → use read_file tool → done"
-- Minimal reasoning sufficient
-
-**For Complex Tasks** (consolidate docs, restructure):
-
-- Full ReAct cycle required
-- Multiple OBSERVE → ANALYZE → PLAN → ACT → VERIFY iterations
-- Deep System 2 reasoning for critical decisions
-- Document reasoning in commit messages
-
-**When User Points Out Mistakes**:
-
-1. **Acknowledge**: "You're right, I missed X"
-2. **Root Cause**: "This happened because..."
-3. **Immediate Fix**: Correct the issue
-4. **Prevention**: "I'm adding [protocol/check/script] to prevent recurrence"
-5. **Update Instructions**: Modify THIS FILE to embed learning
 
 ---
 
@@ -208,40 +139,28 @@ For the complete repository structure, see: **[docs/01_repository-structure.md](
 
 **Quick Overview**:
 
-- `src/01_reasoning-foundations/` - Problem framing, clarification strategies, assumptions
-- `src/02_answer-structuring/` - Top-down communication, depth control, time-boxed reasoning
-- `src/03_tradeoff-articulation/` - Cost vs scale, simplicity vs flexibility, risk framing
-- `src/04_role-perspectives/` - How different roles think when solving the same problem
-- `src/05_evaluation-scenarios/` - Vague problems, conflicting requirements, legacy modernization
-- `src/resources/` - Frameworks, tools, and reference materials
+- `src/legacy/` - Traditional C# style (pre-C# 12)
+- `src/modern/` - Modernized implementations using C# 12–14
+- `tests/` - Unit tests for both implementations
+- `docs/architecture-decisions/` - ADR-style documentation
 
 ---
 
 ## 🔧 Development Guidelines
 
-### When Working with Architecture Reasoning Content
+### When Working with Code
 
-1. **Follow Thinking Mode Structure**: Content organized by Architecture Reasoning thinking modes
-2. **Use Descriptive Names**: Files use clear, descriptive names (e.g., `problem-framing.md`, `cqrs-selective-application.md`)
-3. **Keep Modular**: Recommended ≤150 lines per file (split if needed)
-4. **Include Practical Examples**: Add real-world examples and use cases
-5. **Focus on Reasoning**: Content emphasizes how to think, reason, and communicate, not implementation details
+1. **Maintain Parallel Structure**: Keep legacy and modern code in sync structurally
+2. **Document Changes**: Create ADRs for significant modernization decisions
+3. **Test Both Implementations**: Ensure same test cases work for both
+4. **Focus on Language Features**: Demonstrate C# 12–14 features, not architectural changes
 
-### When Creating Educational Content
+### When Creating Modernization Examples
 
-#### File Naming
-
-- ✅ Use descriptive names: `problem-framing.md`, `decision-rationale-framing.md`, `micro-frontends-rationale.md`
-- ✅ Thinking mode folders use numbered prefixes: `src/01_reasoning-foundations/`, `src/02_answer-structuring/`
-- ✅ Content files do NOT use numbered prefixes - use descriptive names only
-
-#### Content Structure
-
-- ✅ Recommended ≤150 lines per file
-- ✅ Split into multiple parts if content exceeds 150 lines (use `-part1`, `-part2` suffixes)
-- ✅ Each part should be self-contained
-- ✅ Include practical examples and use cases
-- ✅ Focus on reasoning patterns, trade-offs, and articulation, not system design depth
+1. **Start with Legacy**: Begin with traditional C# code
+2. **Apply Modern Features**: Show how C# 12–14 features improve the code
+3. **Document Benefits**: Explain why the modernization matters
+4. **Test Equivalence**: Ensure both implementations behave the same
 
 ### Security Best Practices
 
@@ -249,93 +168,46 @@ For the complete repository structure, see: **[docs/01_repository-structure.md](
 - ✅ **ALWAYS** use environment variables or GitHub Secrets
 - ✅ **ALWAYS** add sensitive files to `.gitignore`
 
-### Source Material Staging (Local Only)
-
-If a `source-material/` folder exists locally, treat it as an **intake/staging area** for raw notes.
-
-- ❌ **NEVER MODIFY** files under `source-material/` (read-only for analysis).
-- ❌ **NEVER COPY** content verbatim into `src/` (follow the Zero-Copy / transformative policy).
-- ✅ **ALWAYS TRANSFORM**: create original outlines, examples, and explanations in `src/`.
-- ✅ Assume `source-material/` is **git-ignored** and may **not** appear on GitHub; don’t add repo structure links that depend on it.
-
 ---
 
 ## 📋 Code Quality Standards
 
-### Markdown Files
+### C# Code
 
-- Use proper heading hierarchy (H1 → H2 → H3)
-- Include code fence language specifications
-- Follow markdownlint rules
-- Use UTF-8 encoding
-- Line length ~120 chars (tables/URLs may exceed)
+- Follow C# coding conventions
+- Use meaningful names
+- Include XML documentation comments
+- Keep methods focused and single-purpose
 
-### Code Examples
+### Tests
 
-- Include GitHub CLI, Git commands, and workflow examples
-- Use proper syntax highlighting
-- Include comments explaining steps
-- Keep examples simple and focused
+- Use xUnit or NUnit
+- Same test cases for both legacy and modern implementations
+- Clear test names describing what is being tested
+- Test both correctness and demonstrate benefits
 
 ---
 
-## 🚀 Content Creation Workflow
+## 🚀 Modernization Workflow
 
-### Architecture Reasoning Workflow
+### Creating a Modernization Example
 
-1. **Thinking Mode Alignment**: Ensure content fits the appropriate thinking mode folder
-2. **Practical Examples**: Include real-world scenarios and use cases
-3. **Reasoning Focus**: Emphasize how to think, reason, and communicate, not implementation details
-4. **Cross-Reference**: Link related topics across thinking modes
-5. **Transformative Content**: Follow zero-copy policy - create original content, not reformatted source material
-
-### Zero-Copy Policy Verification (MANDATORY)
-
-**Before creating ANY content from source material:**
-
-1. ✅ **Read source material for intent only** - Don't copy notes verbatim
-2. ✅ **Create fresh outline** - Different sectioning than source
-3. ✅ **Use original examples** - Avoid source examples, create new ones
-4. ✅ **Transform all quotes** - Even "Key Principle" quotes must be original phrasing
-5. ✅ **Verify no verbatim text** - Run verification check before committing
-
-**Verification Command** (run before committing):
-```powershell
-# Automated zero-copy verification
-.\tools\psscripts\Verify-ZeroCopy.ps1
-
-# For stricter checking (checks phrases, not just quotes)
-.\tools\psscripts\Verify-ZeroCopy.ps1 -Strict
-```
-
-**Manual Verification** (also recommended):
-- Search for known source material phrases in new content
-- Check all "Key Principle" quotes for originality
-- Verify example structures are not copied from source
-
-**Common Violation Patterns to Avoid**:
-- ❌ Copying "Key Principle" quotes verbatim from source
-- ❌ Using exact phrasing from source material examples
-- ❌ Mirroring source outline or section order
-- ❌ Light paraphrasing (changing a few words)
-
-**Required Transformation**:
-- ✅ Complete rewording of all concepts
-- ✅ Original examples and analogies
-- ✅ Different structure and organization
-- ✅ Fresh phrasing for all quotes and principles
+1. **Identify Feature**: Choose a C# 12–14 feature to demonstrate
+2. **Create Legacy Code**: Write traditional C# implementation
+3. **Create Modern Code**: Apply modern C# features
+4. **Write Tests**: Create tests for both implementations
+5. **Document Decision**: Create ADR if significant
+6. **Update README**: Add to modernization steps overview
 
 ### Quality Gate Questions
 
-Before publishing any content:
+Before publishing any modernization:
 
-1. ✅ Does this focus on reasoning, articulation, or decision-making?
-2. ✅ **Is ALL content transformative? (No verbatim text from sources)**
-3. ✅ Are practical examples included?
-4. ✅ Is the content clear and easy to follow?
-5. ✅ Does this fit naturally in the thinking mode progression?
-6. ✅ Does this avoid system design depth (which belongs in `system-design-in-practice`)?
-7. ✅ Is this content within 150 lines for effective delivery?
+1. ✅ Does this demonstrate a practical C# 12–14 feature?
+2. ✅ Is the before/after comparison clear?
+3. ✅ Are tests comprehensive and passing?
+4. ✅ Is the modernization documented?
+5. ✅ Does this improve readability, safety, or maintainability?
 
 ---
 
@@ -343,28 +215,20 @@ Before publishing any content:
 
 Before committing changes:
 
-### Markdown Linting
+### Build and Test
 
 ```bash
-npx markdownlint-cli2 "**/*.md"
-```
-
-### Link Checking (Lychee via Docker)
-
-```bash
-docker run --rm -v "${PWD}:/input:ro" lycheeverse/lychee --config /input/lychee.toml "/input/**/*.md"
+dotnet build
+dotnet test
 ```
 
 ### Pre-Commit Checklist
 
-- [ ] **Zero-Copy Policy Verified**: No verbatim text from source material (check all quotes and examples)
-- [ ] Run markdownlint and fix any issues
-- [ ] Run Lychee link checker (if Docker available)
-- [ ] Verify all file references point to existing files
-- [ ] Check that code fences have language specifications
-- [ ] Ensure proper blank lines around headings and lists
-- [ ] **Manual Verification**: Search for known source material phrases in new content
-- [ ] Verify file naming follows conventions
+- [ ] Code builds without errors
+- [ ] All tests pass for both legacy and modern implementations
+- [ ] ADRs updated (if significant changes)
+- [ ] README updated (if structure changed)
+- [ ] Documentation is clear and accurate
 
 ---
 
@@ -379,8 +243,7 @@ docker run --rm -v "${PWD}:/input:ro" lycheeverse/lychee --config /input/lychee.
 ## 📞 Support
 
 - **Issues**: Use GitHub Issues for questions or suggestions
-- **Learning**: Follow the thinking mode progression (01_reasoning-foundations → 05_evaluation-scenarios)
-- **Practice**: Work through scenarios systematically to develop reasoning skills
+- **Modernization**: Follow the modernization steps in README.md
+- **Examples**: Review `src/legacy/` and `src/modern/` for before/after comparisons
 
 ---
-
