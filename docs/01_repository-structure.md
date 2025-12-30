@@ -13,9 +13,30 @@
 ```text
 csharp-modernization-in-practice/
 │
+├── .copilot/
+│   ├── settings.json
+│   └── tmp/
+│
+├── .cursor/
+│   └── rules/
+│       ├── 01_educational-content-rules.mdc
+│       ├── 02_repository-structure.mdc
+│       ├── 03_quality-assurance.mdc
+│       ├── 04_markdown-standards.mdc
+│       ├── 05_primary-directives.mdc
+│       ├── 06_cross-domain-integration.mdc
+│       ├── 07_file-naming-conventions.mdc
+│       └── README.md
+│
 ├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   ├── config.yml
+│   │   ├── content_suggestion.md
+│   │   └── question.md
 │   ├── workflows/
-│   │   └── build-and-test.yml
+│   │   └── content-compliance.yml
+│   ├── copilot-instructions.md
 │   └── pull_request_template.md
 │
 ├── .gitignore
@@ -72,6 +93,7 @@ csharp-modernization-in-practice/
 └── tools/
     └── psscripts/
         ├── Compare-DocFiles.ps1
+        ├── Detect-PotentialCopiedContent.ps1
         ├── Find-DuplicateContent.ps1
         ├── Get-FileStats.ps1
         ├── Get-MarkdownSummary.ps1
@@ -124,13 +146,43 @@ This repository is organized to enable **side-by-side comparison** between legac
 
 ### Special Directories
 
+- **`.copilot/`**: GitHub Copilot configuration and temporary files
+- **`.cursor/`**: Cursor AI rules and configuration files
 - **`docs/`**: Additional documentation, architecture decisions, images, and planning materials
-- **`source-material/`**: Source materials and planning documents
+- **`source-material/`**: Source materials and planning documents (git-ignored)
 - **`tools/`**: PowerShell scripts for repository maintenance and validation
 
 ---
 
 ## Purpose of Each Folder
+
+### `.copilot/`
+
+GitHub Copilot configuration directory:
+- `settings.json`: Copilot settings and configuration
+- `tmp/`: Temporary files (git-ignored)
+
+### `.cursor/`
+
+Cursor AI rules directory:
+- `rules/`: Modular rule files for Cursor AI
+  - `01_educational-content-rules.mdc`: Code modernization rules
+  - `02_repository-structure.mdc`: Repository structure context
+  - `03_quality-assurance.mdc`: Quality assurance checklist
+  - `04_markdown-standards.mdc`: Markdown authoring standards
+  - `05_primary-directives.mdc`: Primary directives and automation
+  - `06_cross-domain-integration.mdc`: Cross-reference integration
+  - `07_file-naming-conventions.mdc`: File naming conventions
+  - `README.md`: Rules overview
+
+### `.github/`
+
+GitHub configuration:
+- `ISSUE_TEMPLATE/`: Issue templates for bug reports, questions, and content suggestions
+- `workflows/`: GitHub Actions workflows
+  - `content-compliance.yml`: Content compliance checks
+- `copilot-instructions.md`: GitHub Copilot instructions
+- `pull_request_template.md`: Pull request template
 
 ### `src/legacy/`
 
@@ -152,6 +204,21 @@ Architecture Decision Records (ADRs) documenting:
 - Context and rationale
 - Consequences and trade-offs
 
+### `tools/psscripts/`
+
+PowerShell scripts for repository maintenance:
+
+- `Compare-DocFiles.ps1`: Compare multiple documentation files
+- `Detect-PotentialCopiedContent.ps1`: Heuristic scanner for potential copied content
+- `Find-DuplicateContent.ps1`: Find duplicate content in files
+- `Get-FileStats.ps1`: File statistics analysis
+- `Get-MarkdownSummary.ps1`: Markdown file analysis
+- `Get-RepoStats.ps1`: Repository overview statistics
+- `Quick-HealthCheck.ps1`: Fast workspace health check
+- `Test-ContentCompliance.ps1`: Content compliance validation
+- `Validate-FileReferences.ps1`: Validate file references in markdown
+- `Verify-ZeroCopy.ps1`: Zero-copy policy verification
+
 ---
 
 ## Update Protocol
@@ -161,6 +228,8 @@ Architecture Decision Records (ADRs) documenting:
 1. ✅ **Update this file first** (`docs/01_repository-structure.md`)
 2. ✅ **Update references** in:
    - `README.md` - Reference this file
+   - `.github/copilot-instructions.md` - Reference this file
+   - `.cursor/rules/02_repository-structure.mdc` - Reference this file
    - Other documentation files as needed
 3. ✅ **Verify consistency** across all documentation
 
@@ -173,3 +242,5 @@ Architecture Decision Records (ADRs) documenting:
 - **Repository Structure**: This file (`docs/01_repository-structure.md`)
 - **Learning Path**: `README.md`
 - **Architecture Decisions**: `docs/architecture-decisions/`
+- **GitHub Copilot Instructions**: `.github/copilot-instructions.md`
+- **Cursor AI Rules**: `.cursor/rules/`
