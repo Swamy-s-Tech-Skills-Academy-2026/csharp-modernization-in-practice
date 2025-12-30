@@ -1,8 +1,12 @@
-﻿using Modern.Domain.Models;
+﻿using System.Text;
+using Modern.Domain.Models;
 using Modern.Domain.Rules;
 using Modern.Domain.Workflows;
 using Modern.Domain.Policies;
 using Modern.Infrastructure.Output;
+
+// Set console encoding to UTF-8 for proper emoji/icon display
+Console.OutputEncoding = Encoding.UTF8;
 
 // Header
 Console.ForegroundColor = ConsoleColor.Cyan;

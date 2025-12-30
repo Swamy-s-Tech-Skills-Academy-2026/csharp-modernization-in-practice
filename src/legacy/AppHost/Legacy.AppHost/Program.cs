@@ -1,6 +1,10 @@
-﻿using Legacy.Domain.Models;
+﻿using System.Text;
+using Legacy.Domain.Models;
 using Legacy.Domain.Rules;
 using Legacy.Domain.Workflows;
+
+// Set console encoding to UTF-8 for proper emoji/icon display
+Console.OutputEncoding = Encoding.UTF8;
 
 // Header
 Console.ForegroundColor = ConsoleColor.Cyan;
