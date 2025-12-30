@@ -1,3 +1,5 @@
+using System;
+
 namespace Modern.Infrastructure.Output;
 
 using ExecutionResult =
