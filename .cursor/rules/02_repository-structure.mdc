@@ -1,0 +1,120 @@
+# Repository Structure & Context
+
+**Version**: 1.0  
+**Last Updated**: December 30, 2025
+
+---
+
+## 🧭 Repository Context
+
+**C# Modernization in Practice** demonstrates how selected C# 12, 13, and 14 language features can be applied to modernize an existing console-based application.
+
+**Target Audience**:
+
+- Software Engineers modernizing C# codebases
+- Architects evaluating language feature adoption
+- Principal/Staff Engineers leading modernization efforts
+- Development teams planning C# upgrades
+
+**Purpose**: Provides practical examples of incremental language-level modernization that improve code quality without architectural rewrites.
+
+### 🚨 CRITICAL: Repository Purpose
+
+**This repository (`csharp-modernization-in-practice`) contains**:
+
+- ✅ **Legacy Code**: Traditional C# style (pre-C# 12) in `src/legacy/`
+- ✅ **Modern Code**: Modernized implementations using C# 12–14 in `src/modern/`
+- ✅ **Tests**: Unit tests for both implementations in `tests/`
+- ✅ **Architecture Decisions**: ADR-style documentation in `docs/architecture-decisions/`
+
+### 📋 Content Type Classifications
+
+**Legacy Code** (`src/legacy/`):
+
+- Purpose: Traditional C# implementation for comparison
+- Structure: Parallel to modern code structure
+- Style: Pre-C# 12, representative of existing systems
+
+**Modern Code** (`src/modern/`):
+
+- Purpose: Modernized implementation using C# 12–14 features
+- Structure: Parallel to legacy code structure
+- Style: Demonstrates practical application of modern language features
+
+**Tests** (`tests/`):
+
+- Purpose: Validate correctness and demonstrate benefits
+- Structure: Same test cases for both implementations
+- Coverage: Ensures behavioral equivalence
+
+---
+
+## 📁 Repository Structure
+
+> **📋 Single Source of Truth**: The complete and up-to-date repository structure is maintained in [`docs/01_repository-structure.md`](../../docs/01_repository-structure.md). This file should be referenced for the authoritative structure. When the structure changes, update that file first, then update references here.
+
+For the complete repository structure, see: **[docs/01_repository-structure.md](../../docs/01_repository-structure.md)**
+
+### Current Structure Overview (As of December 30, 2025)
+
+**Note**: This is a summary. For the complete structure with all file names and details, refer to [`docs/01_repository-structure.md`](../../docs/01_repository-structure.md).
+
+**Quick Overview**:
+
+- `src/legacy/` - Traditional C# style (pre-C# 12)
+- `src/modern/` - Modernized implementations using C# 12–14
+- `tests/` - Unit tests for both implementations
+- `docs/architecture-decisions/` - ADR-style documentation
+
+## 📁 Directory Structure Details
+
+### Source Directories
+
+**src/legacy/** - Legacy implementation
+
+- AppHost: Console application entry point
+- Domain: Business logic, models, policies, and rules
+- Workflows: Business process orchestration
+
+**src/modern/** - Modernized implementation
+
+- Same structure as legacy for direct comparison
+- Demonstrates practical application of modern language features
+
+### Test Directories
+
+**tests/Legacy.Tests/** - Tests for legacy implementation
+
+- Domain tests
+- Workflow tests
+
+**tests/Modern.Tests/** - Tests for modernized implementation
+
+- Same test cases as legacy tests
+- Validates behavioral equivalence
+
+### Documentation Directories
+
+**docs/architecture-decisions/** - Architecture Decision Records
+
+- ADR-001: Primary Constructors
+- ADR-002: Collection Expressions
+- ADR-003: `ref readonly` Parameters
+- ADR-004: Switch Expressions
+
+## 📞 Support & Escalation
+
+**Questions about modernization?** → Check `docs/architecture-decisions/`
+
+**Need to compare implementations?** → Review `src/legacy/` and `src/modern/`
+
+**Structure outdated?** → Update `docs/01_repository-structure.md` first, then update references in `.github/copilot-instructions.md` and `README.md`
+
+---
+
+## For More Information
+
+- **Repository**: Check README.md for repository location
+- **Learning Path**: `README.md`
+- **Architecture Decisions**: `docs/architecture-decisions/`
+- **GitHub Copilot Instructions**: `.github/copilot-instructions.md`

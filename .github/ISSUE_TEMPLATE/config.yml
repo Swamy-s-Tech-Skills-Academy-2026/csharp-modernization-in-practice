@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: C# Modernization Discussion
+    url: https://github.com/Swamy-s-Tech-Skills-Academy-2026/csharp-modernization-in-practice/discussions
+    about: Ask questions and discuss C# modernization topics
+  - name: Architecture Decisions
+    url: https://github.com/Swamy-s-Tech-Skills-Academy-2026/csharp-modernization-in-practice/tree/main/docs/architecture-decisions
+    about: Review architecture decision records for modernization choices

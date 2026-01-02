@@ -1,0 +1,258 @@
+# Code Modernization Rules (C# Modernization in Practice)
+
+**Version**: 1.0  
+**Last Updated**: December 30, 2025  
+**Priority**: MANDATORY - All code modernization must follow these rules without exception
+
+---
+
+## 📋 Rule Applicability
+
+**IMPORTANT**: These rules apply to code modernization in this repository:
+
+### Legacy Code (`src/legacy/`)
+
+- ✅ **Style**: Traditional C# style (pre-C# 12), representative of existing systems
+- ✅ **Structure**: Parallel to modern code structure
+- ✅ **Purpose**: Baseline for comparison
+
+### Modern Code (`src/modern/`)
+
+- ✅ **Style**: Modernized using C# 12–14 features
+- ✅ **Structure**: Parallel to legacy code structure
+- ✅ **Purpose**: Demonstrate practical modernization benefits
+
+### Tests (`tests/`)
+
+- ✅ **Coverage**: Same test cases for both implementations
+- ✅ **Purpose**: Validate correctness and demonstrate benefits
+- ✅ **Structure**: Separate test projects for legacy and modern
+
+---
+
+## 🚫 Zero-Copy Policy (Non-Negotiable)
+
+**CRITICAL**: All content (documentation, code comments, markdown files) must be transformative, not reformative.
+
+**APPLICABILITY**: This policy applies to:
+
+- **A. Content Creation**: When creating new documentation, code comments, or markdown files
+- **B. Content Review**: When reviewing existing content before merging or publishing
+
+❌ **NEVER** copy text verbatim from books, articles, websites, videos, or third-party materials  
+❌ **NEVER** mirror a source's outline, section order, headings, or example sequence  
+❌ **NEVER** use "light paraphrasing" — must transform completely  
+❌ **NEVER** copy quotes verbatim — even "Key Principle" quotes must use original phrasing  
+✅ **ALWAYS** create original content with fresh explanations and examples  
+✅ **ALWAYS** write code examples from first principles  
+✅ Brief quotations allowed ONLY with quotation marks and source citation
+
+**Verification**: Run `.\tools\psscripts\Verify-ZeroCopy.ps1` before committing to check for:
+
+- Exact quote matches from source material
+- Near-exact matches (potential quote matches)
+- Phrase matches (in strict mode: `-Strict`)
+
+**Note**: The `source-material/` directory (git-ignored) is used as a staging area for source content before transformation. The `Verify-ZeroCopy.ps1` script checks content against files in `source-material/` to ensure transformative content creation.
+
+**Remember**: All content must be transformative, not reformative. Even quotes and "Key Principle" sections must use original phrasing.
+
+---
+
+## 🚫 Modernization Principles (Non-Negotiable)
+
+**CRITICAL**: All modernization must follow these principles:
+
+❌ **NEVER** make architectural rewrites (focus on language-level modernization)  
+❌ **NEVER** remove legacy code (keep for comparison)  
+❌ **NEVER** change behavior (modernization should be functionally equivalent)  
+✅ **ALWAYS** maintain parallel structure between legacy and modern  
+✅ **ALWAYS** document significant decisions in ADRs  
+✅ **ALWAYS** test both implementations with same test cases
+
+---
+
+## 🔄 Modernization Workflow (Required Every Time)
+
+**Step-by-step process for creating modernization examples**:
+
+1. **Identify Feature**: Choose a C# 12–14 feature to demonstrate
+2. **Create Legacy Code**: Write traditional C# implementation in `src/legacy/`
+3. **Create Modern Code**: Apply modern C# features in `src/modern/`
+4. **Write Tests**: Create tests for both implementations
+5. **Document Decision**: Create ADR in `docs/architecture-decisions/` if significant
+6. **Verify Equivalence**: Ensure both implementations behave the same
+
+**Goal**: Create clear before/after comparisons that demonstrate practical modernization benefits.
+
+---
+
+## 📋 Required Code Structure
+
+### Parallel Structure
+
+**CRITICAL**: Legacy and modern code must maintain parallel structure:
+
+```text
+src/
+├── legacy/
+│   ├── AppHost/
+│   ├── Domain/
+│   └── Workflows/
+└── modern/
+    ├── AppHost/
+    ├── Domain/
+    └── Workflows/
+```
+
+### Architecture Decision Records (ADRs)
+
+**When to Create ADRs**:
+
+- Adopting a new C# feature
+- Making significant modernization decisions
+- Explaining trade-offs and consequences
+
+**ADR Structure**:
+
+- Status (Accepted/Proposed/Deprecated)
+- Applies to (C# version)
+- Context
+- Decision
+- Consequences
+
+---
+
+## 🎓 Code Quality Standards
+
+All code must demonstrate:
+
+- ✅ **Clear intent**: Code should be readable and maintainable
+- ✅ **Functional equivalence**: Legacy and modern should behave the same
+- ✅ **Practical examples**: Real-world modernization scenarios
+- ✅ **Comprehensive tests**: Both implementations fully tested
+- ✅ **Documentation**: Clear comments and ADRs where needed
+
+---
+
+## ✅ Quality Gate Questions (Before Publishing)
+
+**Self-check before finalizing any modernization**:
+
+1. ✅ Does this demonstrate a practical C# 12–14 feature?
+2. ✅ Is the before/after comparison clear?
+3. ✅ Are tests comprehensive and passing for both implementations?
+4. ✅ Is the modernization documented (ADR if significant)?
+5. ✅ Does this improve readability, safety, or maintainability?
+6. ✅ Is the code structure parallel between legacy and modern?
+
+---
+
+## 📁 Code Placement Policy
+
+✅ `src/legacy/` is EXCLUSIVELY for legacy C# code  
+✅ `src/modern/` is EXCLUSIVELY for modernized C# code  
+✅ `tests/` contains tests for both implementations  
+❌ Never mix legacy and modern code in same directory  
+✅ Maintain parallel structure for easy comparison
+
+---
+
+## 🔗 File Reference Requirements
+
+### Mandatory Practices
+
+**CRITICAL**: All file references MUST point to existing files.
+
+### When Creating Code References
+
+1. ✅ **Verify file exists** before adding reference
+2. ✅ **Use exact file names** - match actual file names exactly
+3. ✅ **Test references** - ensure navigation works
+4. ✅ **Update after refactoring** - when moving files, update ALL references immediately
+
+---
+
+## 🎯 Content Guidelines for C# Modernization
+
+**CRITICAL**: All code must align with modernization goals and demonstrate practical C# 12–14 features.
+
+### Content Quality Policy
+
+✅ **ALWAYS** focus on language-level modernization  
+✅ **ALWAYS** maintain functional equivalence  
+✅ **ALWAYS** include comprehensive tests  
+✅ **ALWAYS** document significant decisions  
+❌ **NEVER** make architectural changes  
+❌ **NEVER** change behavior during modernization
+
+**Rationale**: This repository focuses on demonstrating how modern C# language features improve code quality. Architectural changes belong in separate repositories.
+
+**When Creating Modernization Examples**:
+
+1. Start with realistic legacy code
+2. Apply modern C# features incrementally
+3. Ensure behavioral equivalence
+4. Document benefits and trade-offs
+5. Test thoroughly
+
+---
+
+## 🔍 Code Review Process
+
+**MANDATORY**: All code must undergo review before merging.
+
+### Review Checklist
+
+#### 1. Code Structure Review
+
+- [ ] Legacy and modern code maintain parallel structure
+- [ ] Code is organized logically
+- [ ] File names are clear and descriptive
+
+#### 2. Modernization Review
+
+- [ ] Modern code demonstrates C# 12–14 features appropriately
+- [ ] Before/after comparison is clear
+- [ ] Modernization improves code quality (readability, safety, maintainability)
+
+#### 3. Test Review
+
+- [ ] Tests exist for both legacy and modern implementations
+- [ ] Same test cases applied to both
+- [ ] All tests pass
+- [ ] Tests validate correctness and demonstrate benefits
+
+#### 4. Documentation Review
+
+- [ ] **Zero-Copy Policy verified**: Content is transformative, not reformative
+- [ ] ADR created for significant decisions
+- [ ] Code comments are clear and helpful
+- [ ] README updated if structure changed
+
+#### 5. Functional Equivalence Review
+
+- [ ] Legacy and modern implementations behave the same
+- [ ] No behavioral changes introduced
+- [ ] Modernization is purely language-level
+
+---
+
+## 📝 Review Tools
+
+**Use these tools for code review**:
+
+- `dotnet build` - Build verification
+- `dotnet test` - Test execution
+- Manual code review - Structure and modernization quality
+
+---
+
+## Review Frequency
+
+- **Before committing**: Review all modified files
+- **After modernization**: Review both legacy and modern implementations
+- **Periodic audits**: Comprehensive review of modernization examples
+- **After major changes**: Full review of affected sections
+
+---

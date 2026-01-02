@@ -1,0 +1,122 @@
+# Quality Assurance Checklist
+
+**Version**: 1.0  
+**Last Updated**: December 30, 2025
+
+---
+
+## ✅ Quality Assurance Checklist
+
+**Before ANY code creation or modification**:
+
+### Code Quality (C# Modernization Standards)
+
+**APPLICABILITY**: 
+- **Legacy Code** (`src/legacy/`): Traditional C# style, representative of existing systems
+- **Modern Code** (`src/modern/`): Modernized using C# 12–14 features
+- **Tests** (`tests/`): Unit tests for both implementations
+
+- [ ] **Parallel Structure Maintained**: Legacy and modern code maintain parallel structure
+- [ ] **Functional Equivalence**: Both implementations behave the same
+- [ ] **C# Feature Application**: Modern code appropriately demonstrates C# 12–14 features
+- [ ] **Code Quality Improved**: Modernization improves readability, safety, or maintainability
+- [ ] **Clear Before/After**: Comparison between legacy and modern is clear
+- [ ] **Comprehensive Tests**: Tests exist for both implementations
+- [ ] **Same Test Cases**: Same test cases applied to both legacy and modern
+- [ ] **All Tests Pass**: Both test suites pass successfully
+- [ ] **ADR Created**: Architecture Decision Record created for significant decisions
+- [ ] **Code Comments**: Clear and helpful comments where needed
+
+### Technical Quality
+
+- [ ] **Build Success**: `dotnet build` completes without errors
+- [ ] **Test Success**: `dotnet test` passes for both implementations
+- [ ] **Code Style**: Follows C# coding conventions
+- [ ] **Meaningful Names**: Variables, methods, and classes have clear names
+- [ ] **XML Documentation**: Public APIs have XML documentation comments
+- [ ] **No Warnings**: Code compiles without warnings (or warnings are justified)
+- [ ] **Character encoding**: UTF-8, no encoding issues
+
+### Documentation Quality
+
+- [ ] **ADR Updated**: Architecture Decision Record created/updated for significant changes
+- [ ] **README Updated**: README updated if structure changed
+- [ ] **Code Comments**: Code is well-commented where needed
+- [ ] **File References**: All file references point to existing files
+- [ ] **No Broken Links**: All markdown links resolve correctly
+
+### Modernization Principles
+
+- [ ] **Language-Level Only**: Modernization focuses on language features, not architecture
+- [ ] **No Behavioral Changes**: Modernization does not change behavior
+- [ ] **Incremental Approach**: Changes are incremental and comparable
+- [ ] **Practical Examples**: Examples are realistic and applicable
+- [ ] **Benefits Documented**: Benefits of modernization are clear
+
+### Documentation Updates (CRITICAL)
+
+- [ ] ✅ `docs/01_repository-structure.md` updated if structure changed (UPDATE FIRST)
+- [ ] ✅ `.github/copilot-instructions.md` updated if structure changed
+- [ ] ✅ `README.md` updated if structure changed
+- [ ] ✅ `.cursor/rules/02_repository-structure.mdc` updated if structure changed
+- [ ] ✅ Related documentation updated
+
+### Pre-Commit Checklist
+
+- [ ] Code builds without errors: `dotnet build`
+- [ ] All tests pass: `dotnet test`
+- [ ] Both implementations tested: Legacy and modern test suites pass
+- [ ] ADR created/updated (if significant change)
+- [ ] README updated (if structure changed)
+- [ ] No sensitive information included
+- [ ] Code follows C# conventions
+- [ ] Parallel structure maintained
+
+---
+
+## 🔍 Review Process
+
+### Code Review Checklist
+
+#### Structure Review
+- [ ] Legacy and modern code maintain parallel structure
+- [ ] Code is organized logically
+- [ ] File names are clear and descriptive
+
+#### Modernization Review
+- [ ] Modern code demonstrates C# 12–14 features appropriately
+- [ ] Before/after comparison is clear
+- [ ] Modernization improves code quality
+
+#### Test Review
+- [ ] Tests exist for both implementations
+- [ ] Same test cases applied to both
+- [ ] All tests pass
+- [ ] Tests validate correctness
+
+#### Documentation Review
+- [ ] ADR created for significant decisions
+- [ ] Code comments are clear
+- [ ] README updated if needed
+
+---
+
+## 🛠️ Quality Tools
+
+**Use these tools for quality assurance**:
+
+- `dotnet build` - Build verification
+- `dotnet test` - Test execution
+- Manual code review - Structure and modernization quality
+- Markdown linting (for documentation): `npx markdownlint-cli2 "**/*.md"`
+
+---
+
+## 📝 Review Frequency
+
+- **Before committing**: Review all modified files
+- **After modernization**: Review both legacy and modern implementations
+- **Periodic audits**: Comprehensive review of modernization examples
+- **After major changes**: Full review of affected sections
+
+---

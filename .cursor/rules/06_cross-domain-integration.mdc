@@ -1,0 +1,45 @@
+# Cross-Reference Integration
+
+**Version**: 1.0  
+**Last Updated**: December 30, 2025
+
+---
+
+## 🔗 Cross-Reference Integration
+
+All modernization examples should connect to:
+
+- Related C# features
+- Architecture Decision Records (ADRs)
+- Related modernization examples
+- Test coverage
+
+**Connection Pattern**:
+
+```markdown
+## 🔗 Related Topics
+
+**Related C# Features**:
+- [Link to related feature examples]
+
+**Architecture Decisions**:
+- [Link to relevant ADRs]
+
+**Related Examples**:
+- [Link to related modernization examples]
+
+**Tests**:
+- [Link to test files]
+```
+
+---
+
+## Integration Requirements
+
+When creating modernization examples, always:
+
+1. **Identify Related Features**: What other C# features are related?
+2. **Link to ADRs**: What architecture decisions apply?
+3. **Show Connections**: How does this relate to other examples?
+4. **Reference Tests**: Link to test coverage
+5. **Document Dependencies**: What does this modernization depend on or enable?

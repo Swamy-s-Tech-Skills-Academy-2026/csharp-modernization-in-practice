@@ -1,0 +1,20 @@
+name: Content compliance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - swamy/**
+
+jobs:
+  compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Content compliance checks
+        shell: pwsh
+        run: |
+          ./tools/psscripts/Test-ContentCompliance.ps1
